@@ -1,0 +1,118 @@
+/* ══════════════════════════════════════════════════════
+   GALGAME Maker — Warm Anime (Sakura) Design Tokens
+   ══════════════════════════════════════════════════════ */
+
+/* ── Default: Warm Light Theme (Sakura) ── */
+:root {
+  /* Background layers */
+  --bg-page: #FFF3EC;
+  --bg-toolbar: #FFF8F4;
+  --bg-panel: #FFFAF7;
+  --bg-card: #FFFFFF;
+  --bg-canvas: #FFF6F0;
+  --bg-hover: #FFEEE4;
+  --bg-input: #FFFFFF;
+  --bg-overlay: #FFFAF7;
+
+  /* Borders */
+  --border-color: #ECD5C4;
+  --border-color-light: #DDBFA8;
+
+  /* Text colors */
+  --text-primary: #4A3320;
+  --text-secondary: #7A6048;
+  --text-muted: #A89078;
+  --text-dim: #C8B8A4;
+
+  /* Node brand colors — pastel anime palette */
+  --color-blue: #6BA4D8;
+  --color-green: #74B88A;
+  --color-orange: #F0A060;
+  --color-purple: #A088D0;
+  --color-red: #E88080;
+  --color-yellow: #DDC050;
+  --color-cyan: #64B0BC;
+  --color-amber: #D8A030;
+  --color-gray: #A89888;
+  --color-pink: #E890A8;
+  --color-teal: #60B0A0;
+
+  /* Accent colors */
+  --accent-pink: #F0A0A8;
+  --accent-coral: #F09480;
+  --accent-peach: #F8CCC0;
+
+  /* Border radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-lg: 16px;
+  --space-xl: 24px;
+
+  /* Font sizes */
+  --text-xs: 10px;
+  --text-sm: 12px;
+  --text-base: 13px;
+  --text-lg: 14px;
+  --text-xl: 16px;
+  --text-2xl: 20px;
+  --text-3xl: 36px;
+
+  /* Shadows — warm tinted */
+  --shadow-sm: 0 1px 4px rgba(180, 130, 100, 0.08);
+  --shadow-card: 0 2px 12px rgba(180, 130, 100, 0.10);
+  --shadow-glow: 0 0 0 3px rgba(240, 160, 168, 0.30);
+  --shadow-lg: 0 4px 20px rgba(180, 130, 100, 0.12);
+
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+}
+
+/* ── Warm Dark Theme ── */
+:root[data-theme="dark"] {
+  --bg-page: #2A1E18;
+  --bg-toolbar: #241A14;
+  --bg-panel: #2A1E18;
+  --bg-card: #1E1410;
+  --bg-canvas: #1A1210;
+  --bg-hover: #302218;
+  --bg-input: #1E1410;
+  --bg-overlay: #2A1E18;
+
+  --border-color: #403028;
+  --border-color-light: #554038;
+
+  --text-primary: #E8D8C8;
+  --text-secondary: #B8A090;
+  --text-muted: #887060;
+  --text-dim: #685448;
+
+  /* Node colors — slightly more saturated for dark bg visibility */
+  --color-blue: #7BB4E8;
+  --color-green: #84C898;
+  --color-orange: #F8B878;
+  --color-purple: #B098E0;
+  --color-red: #F09090;
+  --color-yellow: #EDD060;
+  --color-cyan: #74C0CC;
+  --color-amber: #E8B040;
+  --color-gray: #B8A898;
+  --color-pink: #F0A0B8;
+  --color-teal: #70C0B0;
+
+  --accent-pink: #F8B0B8;
+  --accent-coral: #F8A898;
+  --accent-peach: #F8D0C0;
+
+  --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.20);
+  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.25);
+  --shadow-glow: 0 0 0 3px rgba(240, 160, 168, 0.25);
+  --shadow-lg: 0 4px 20px rgba(0, 0, 0, 0.30);
+}

@@ -1,0 +1,2384 @@
+{
+  "meta": {
+    "name": "樱花下的约定-全节点测试",
+    "version": "2.0.0",
+    "resolution": "1280x720",
+    "projectPath": "D:\\galaGame\\galgame-maker-tool\\test.galgame",
+    "createdAt": "2026-05-02T04:15:09.540Z",
+    "updatedAt": "2026-05-04T08:21:13.441Z"
+  },
+  "flow": {
+    "nodes": [
+      {
+        "id": "n0_label",
+        "type": "label",
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "data": {
+          "id": "n0_label",
+          "label": "★ 第一章入口",
+          "color": "#F0A060"
+        }
+      },
+      {
+        "id": "n1_dialog",
+        "type": "dialog",
+        "position": {
+          "x": 250,
+          "y": 0
+        },
+        "data": {
+          "id": "n1_dialog",
+          "label": "序幕：樱花盛开的季节",
+          "character": "旁白",
+          "content": "春天到了，樱花盛开。你作为转学生来到了这所学校。一段关于青春、友情与爱的故事即将展开……",
+          "background": "assets/backgrounds/sakura_tree.png",
+          "nextNodeId": "n2_savePoint"
+        }
+      },
+      {
+        "id": "n2_savePoint",
+        "type": "savePoint",
+        "position": {
+          "x": 500,
+          "y": 0
+        },
+        "data": {
+          "id": "n2_savePoint",
+          "label": "存档：开始",
+          "slotLabel": "故事开始",
+          "nextNodeId": "n3_setVariable"
+        }
+      },
+      {
+        "id": "n3_setVariable",
+        "type": "setVariable",
+        "position": {
+          "x": 750,
+          "y": 0
+        },
+        "data": {
+          "id": "n3_setVariable",
+          "label": "初始化变量",
+          "variable": "剧情进度",
+          "op": "=",
+          "value": "1",
+          "nextNodeId": "n4_dialog"
+        }
+      },
+      {
+        "id": "n4_dialog",
+        "type": "dialog",
+        "position": {
+          "x": 1250,
+          "y": 0
+        },
+        "data": {
+          "id": "n4_dialog",
+          "label": "转学第一天",
+          "character": "旁白",
+          "content": "你走进教室，阳光透过窗户洒在课桌上。教室里已经有不少同学了。",
+          "background": "assets/backgrounds/ComfyUI_00001_.png",
+          "nextNodeId": "n5_dialog"
+        }
+      },
+      {
+        "id": "n5_dialog",
+        "type": "dialog",
+        "position": {
+          "x": 1250,
+          "y": 0
+        },
+        "data": {
+          "id": "n5_dialog",
+          "label": "遇见小樱",
+          "character": "小樱",
+          "content": "你好呀！你是新来的转学生吧？我叫小樱，很高兴认识你！有什么需要帮忙的尽管说哦~",
+          "background": "assets/backgrounds/ComfyUI_ANMIE_00001_.png",
+          "nextNodeId": "n6_setVariable"
+        }
+      },
+      {
+        "id": "n6_setVariable",
+        "type": "setVariable",
+        "position": {
+          "x": 1500,
+          "y": 0
+        },
+        "data": {
+          "id": "n6_setVariable",
+          "label": "小樱好感+10",
+          "variable": "小樱好感度",
+          "op": "+=",
+          "value": "10",
+          "nextNodeId": "n7_setVariable"
+        }
+      },
+      {
+        "id": "n7_setVariable",
+        "type": "setVariable",
+        "position": {
+          "x": 1750,
+          "y": 0
+        },
+        "data": {
+          "id": "n7_setVariable",
+          "label": "小樱好感+5",
+          "variable": "小樱好感度",
+          "op": "+=",
+          "value": "5",
+          "nextNodeId": "n8_setVariable"
+        }
+      },
+      {
+        "id": "n8_setVariable",
+        "type": "setVariable",
+        "position": {
+          "x": 2000,
+          "y": 0
+        },
+        "data": {
+          "id": "n8_setVariable",
+          "label": "剧情+1",
+          "variable": "剧情进度",
+          "op": "+=",
+          "value": "1",
+          "nextNodeId": "n9_choice"
+        }
+      },
+      {
+        "id": "n9_choice",
+        "type": "choice",
+        "position": {
+          "x": 2250,
+          "y": 0
+        },
+        "data": {
+          "id": "n9_choice",
+          "label": "第一次选择：如何回应？",
+          "title": "小樱看起来很友善，你要怎么回应？",
+          "options": [
+            {
+              "id": "opt_0",
+              "text": "热情",
+              "nextNodeId": "n10_dialog"
+            },
+            {
+              "id": "opt_1",
+              "text": "腼腆",
+              "nextNodeId": "n14_dialog"
+            },
+            {
+              "id": "opt_2",
+              "text": "冷漠",
+              "nextNodeId": "n17_dialog"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n10_dialog",
+        "type": "dialog",
+        "position": {
+          "x": 2500,
+          "y": -160
+        },
+        "data": {
+          "id": "n10_dialog",
+          "label": "热情回应",
+          "character": "小樱",
+          "content": "哈哈，你很开朗呢！来，我带你参观一下学校吧！",
+          "background": "assets/backgrounds/ComfyUI_ANMIE_00002_.png",
+          "nextNodeId": "n11_setVariable"
+        }
+      },
+      {
+        "id": "n11_setVariable",
+        "type": "setVariable",
+        "position": {
+          "x": 2750,
+          "y": -160
+        },
+        "data": {
+          "id": "n11_setVariable",
+          "label": "小樱好感+15",
+          "variable": "小樱好感度",
+          "op": "+=",
+          "value": "15",
+          "nextNodeId": "n12_setVariable"
+        }
+      },
+      {
+        "id": "n12_setVariable",
+        "type": "setVariable",
+        "position": {
+          "x": 3000,
+          "y": -160
+        },
+        "data": {
+          "id": "n12_setVariable",
+          "label": "勇气+20",
+          "variable": "勇气值",
+          "op": "+=",
+          "value": "20",
+          "nextNodeId": "n13_setVariable"
+        }
+      },
+      {
+        "id": "n13_setVariable",
+        "type": "setVariable",
+        "position": {
+          "x": 3250,
+          "y": -160
+        },
+        "data": {
+          "id": "n13_setVariable",
+          "label": "剧情+2",
+          "variable": "剧情进度",
+          "op": "+=",
+          "value": "2",
+          "nextNodeId": "n20_goto"
+        }
+      },
+      {
+        "id": "n14_dialog",
+        "type": "dialog",
+        "position": {
+          "x": 2500,
+          "y": 0
+        },
+        "data": {
+          "id": "n14_dialog",
+          "label": "腼腆回应",
+          "character": "小樱",
+          "content": "不用害羞啦~ 大家都是同学。来，我帮你熟悉一下环境。",
+          "background": "assets/backgrounds/ComfyUI_ANMIE_00002_.png",
+          "nextNodeId": "n15_setVariable"
+        }
+      },
+      {
+        "id": "n15_setVariable",
+        "type": "setVariable",
+        "position": {
+          "x": 2750,
+          "y": 0
+        },
+        "data": {
+          "id": "n15_setVariable",
+          "label": "小樱好感+8",
+          "variable": "小樱好感度",
+          "op": "+=",
+          "value": "8",
+          "nextNodeId": "n16_setVariable"
+        }
+      },
+      {
+        "id": "n16_setVariable",
+        "type": "setVariable",
+        "position": {
+          "x": 3000,
+          "y": 0
+        },
+        "data": {
+          "id": "n16_setVariable",
+          "label": "勇气+5",
+          "variable": "勇气值",
+          "op": "+=",
+          "value": "5",
+          "nextNodeId": "n20_goto"
+        }
+      },
+      {
+        "id": "n17_dialog",
+        "type": "dialog",
+        "position": {
+          "x": 2500,
+          "y": 160
+        },
+        "data": {
+          "id": "n17_dialog",
+          "label": "冷漠回应",
+          "character": "小樱",
+          "content": "（小声嘀咕）看来新同学不太爱说话呢...不过没关系，慢慢就会熟悉的。",
+          "background": "assets/backgrounds/ComfyUI_00008_.png",
+          "nextNodeId": "n18_setVariable"
+        }
+      },
+      {
+        "id": "n18_setVariable",
+        "type": "setVariable",
+        "position": {
+          "x": 2750,
+          "y": 160
+        },
+        "data": {
+          "id": "n18_setVariable",
+          "label": "小樱好感+2",
+          "variable": "小樱好感度",
+          "op": "+=",
+          "value": "2",
+          "nextNodeId": "n19_setVariable"
+        }
+      },
+      {
+        "id": "n19_setVariable",
+        "type": "setVariable",
+        "position": {
+          "x": 3000,
+          "y": 160
+        },
+        "data": {
+          "id": "n19_setVariable",
+          "label": "选择次数+1",
+          "variable": "选择次数",
+          "op": "+=",
+          "value": "1",
+          "nextNodeId": "n20_goto"
+        }
+      },
+      {
+        "id": "n20_goto",
+        "type": "goto",
+        "position": {
+          "x": 3500,
+          "y": 0
+        },
+        "data": {
+          "id": "n20_goto",
+          "label": "前往第二章",
+          "targetNodeId": "n21_label"
+        }
+      },
+      {
+        "id": "n21_label",
+        "type": "label",
+        "position": {
+          "x": 3750,
+          "y": -80
+        },
+        "data": {
+          "id": "n21_label",
+          "label": "★ 第二章：校园生活",
+          "color": "#6BA4D8"
+        }
+      },
+      {
+        "id": "n22_dialog",
+        "type": "dialog",
+        "position": {
+          "x": 4000,
+          "y": -80
+        },
+        "data": {
+          "id": "n22_dialog",
+          "label": "第二章开始",
+          "character": "旁白",
+          "content": "几周过去了，你逐渐适应了新的校园生活。今天有一场重要的随堂测验。",
+          "background": "assets/backgrounds/ComfyUI_00002_.png",
+          "nextNodeId": "n23_audio"
+        }
+      },
+      {
+        "id": "n23_audio",
+        "type": "audio",
+        "position": {
+          "x": 4250,
+          "y": -80
+        },
+        "data": {
+          "id": "n23_audio",
+          "label": "教室BGM",
+          "audioType": "bgm",
+          "action": "play",
+          "src": "assets/audio/classroom_bgm.mp3",
+          "loop": true,
+          "volume": 1,
+          "nextNodeId": "n24_animation"
+        }
+      },
+      {
+        "id": "n24_animation",
+        "type": "animation",
+        "position": {
+          "x": 4500,
+          "y": -80
+        },
+        "data": {
+          "id": "n24_animation",
+          "label": "林老师入场",
+          "target": "screen",
+          "action": "enter",
+          "position": "right",
+          "duration": 600,
+          "nextNodeId": "n25_moveCharacter"
+        }
+      },
+      {
+        "id": "n25_moveCharacter",
+        "type": "moveCharacter",
+        "position": {
+          "x": 4750,
+          "y": -80
+        },
+        "data": {
+          "id": "n25_moveCharacter",
+          "label": "老师走到讲台",
+          "target": "旁白",
+          "fromPosition": "right",
+          "toPosition": "center",
+          "duration": 1000,
+          "easing": "ease-out",
+          "nextNodeId": "n26_dialog"
+        }
+      },
+      {
+        "id": "n26_dialog",
+        "type": "dialog",
+        "position": {
+          "x": 5000,
+          "y": -80
+        },
+        "data": {
+          "id": "n26_dialog",
+          "label": "林老师讲话",
+          "character": "林老师",
+          "content": "同学们好！今天进行随堂测验。请大家认真答题，考试时间30分钟。",
+          "background": "assets/backgrounds/ComfyUI_00002_.png",
+          "nextNodeId": "n27_timer"
+        }
+      },
+      {
+        "id": "n27_timer",
+        "type": "timer",
+        "position": {
+          "x": 5250,
+          "y": -80
+        },
+        "data": {
+          "id": "n27_timer",
+          "label": "考试倒计时",
+          "mode": "countdown",
+          "duration": 3000,
+          "variable": "计时结果",
+          "nextNodeId": "n28_dialog"
+        }
+      },
+      {
+        "id": "n28_dialog",
+        "type": "dialog",
+        "position": {
+          "x": 5500,
+          "y": -80
+        },
+        "data": {
+          "id": "n28_dialog",
+          "label": "考试结束",
+          "character": "林老师",
+          "content": "时间到！请交卷。希望大家都发挥出了自己的水平。",
+          "background": "assets/backgrounds/ComfyUI_00002_.png",
+          "nextNodeId": "n29_setVariable"
+        }
+      },
+      {
+        "id": "n29_setVariable",
+        "type": "setVariable",
+        "position": {
+          "x": 5750,
+          "y": -80
+        },
+        "data": {
+          "id": "n29_setVariable",
+          "label": "学习进度提升",
+          "variable": "学习进度",
+          "op": "+=",
+          "value": "30",
+          "nextNodeId": "n30_condition"
+        }
+      },
+      {
+        "id": "n30_condition",
+        "type": "condition",
+        "position": {
+          "x": 6000,
+          "y": -80
+        },
+        "data": {
+          "id": "n30_condition",
+          "label": "考试通过判断",
+          "expression": "学习进度 >= 30",
+          "trueNextId": "n31_dialog",
+          "falseNextId": "n34_dialog"
+        }
+      },
+      {
+        "id": "n31_dialog",
+        "type": "dialog",
+        "position": {
+          "x": 6250,
+          "y": -180
+        },
+        "data": {
+          "id": "n31_dialog",
+          "label": "通过考试",
+          "character": "林老师",
+          "content": "不错，你通过了测验！看来这段时间的努力没有白费。",
+          "background": "assets/backgrounds/ComfyUI_00004_.png",
+          "nextNodeId": "n32_setVariable"
+        }
+      },
+      {
+        "id": "n32_setVariable",
+        "type": "setVariable",
+        "position": {
+          "x": 6500,
+          "y": -180
+        },
+        "data": {
+          "id": "n32_setVariable",
+          "label": "获得奖励100元",
+          "variable": "金钱",
+          "op": "+=",
+          "value": "100",
+          "nextNodeId": "n33_setVariable"
+        }
+      },
+      {
+        "id": "n33_setVariable",
+        "type": "setVariable",
+        "position": {
+          "x": 6750,
+          "y": -180
+        },
+        "data": {
+          "id": "n33_setVariable",
+          "label": "剧情+3",
+          "variable": "剧情进度",
+          "op": "+=",
+          "value": "3",
+          "nextNodeId": "n36_goto"
+        }
+      },
+      {
+        "id": "n34_dialog",
+        "type": "dialog",
+        "position": {
+          "x": 6250,
+          "y": 20
+        },
+        "data": {
+          "id": "n34_dialog",
+          "label": "未通过考试",
+          "character": "林老师",
+          "content": "很遗憾，这次没有通过。不过别灰心，还有补考的机会。",
+          "background": "assets/backgrounds/ComfyUI_00004_.png",
+          "nextNodeId": "n35_setVariable"
+        }
+      },
+      {
+        "id": "n35_setVariable",
+        "type": "setVariable",
+        "position": {
+          "x": 6500,
+          "y": 20
+        },
+        "data": {
+          "id": "n35_setVariable",
+          "label": "学习进度+15（补课）",
+          "variable": "学习进度",
+          "op": "+=",
+          "value": "15",
+          "nextNodeId": "n36_goto"
+        }
+      },
+      {
+        "id": "n36_goto",
+        "type": "goto",
+        "position": {
+          "x": 7000,
+          "y": -80
+        },
+        "data": {
+          "id": "n36_goto",
+          "label": "遇见小海",
+          "targetNodeId": "n37_label"
+        }
+      },
+      {
+        "id": "n37_label",
+        "type": "label",
+        "position": {
+          "x": 7250,
+          "y": -80
+        },
+        "data": {
+          "id": "n37_label",
+          "label": "★ 第三章：操场邂逅",
+          "color": "#74B88A"
+        }
+      },
+      {
+        "id": "n38_wait",
+        "type": "wait",
+        "position": {
+          "x": 7500,
+          "y": -80
+        },
+        "data": {
+          "id": "n38_wait",
+          "label": "课间休息",
+          "duration": 500,
+          "nextNodeId": "n39_audio"
+        }
+      },
+      {
+        "id": "n39_audio",
+        "type": "audio",
+        "position": {
+          "x": 7750,
+          "y": -80
+        },
+        "data": {
+          "id": "n39_audio",
+          "label": "操场BGM",
+          "audioType": "bgm",
+          "action": "play",
+          "src": "assets/audio/sports_bgm.mp3",
+          "loop": false,
+          "volume": 1,
+          "nextNodeId": "n40_dialog"
+        }
+      },
+      {
+        "id": "n40_dialog",
+        "type": "dialog",
+        "position": {
+          "x": 8000,
+          "y": -80
+        },
+        "data": {
+          "id": "n40_dialog",
+          "label": "遇见小海",
+          "character": "小海",
+          "content": "嘿！你就是新来的转学生吧？我叫小海，是篮球队的。要不要来球场看看？",
+          "background": "assets/backgrounds/ComfyUI_00035_.png",
+          "nextNodeId": "n41_choice"
+        }
+      },
+      {
+        "id": "n41_choice",
+        "type": "choice",
+        "position": {
+          "x": 8250,
+          "y": -80
+        },
+        "data": {
+          "id": "n41_choice",
+          "label": "小海的邀请",
+          "title": "小海邀请你去球场，你要？",
+          "options": [
+            {
+              "id": "opt_0",
+              "text": "去球场",
+              "nextNodeId": "n42_dialog"
+            },
+            {
+              "id": "opt_1",
+              "text": "做作业",
+              "nextNodeId": "n55_dialog"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n42_dialog",
+        "type": "dialog",
+        "position": {
+          "x": 8500,
+          "y": -160
+        },
+        "data": {
+          "id": "n42_dialog",
+          "label": "接受邀请",
+          "character": "小海",
+          "content": "太好了！来，我教你投篮！",
+          "background": "assets/backgrounds/ComfyUI_00037_.png",
+          "nextNodeId": "n43_setVariable"
+        }
+      },
+      {
+        "id": "n43_setVariable",
+        "type": "setVariable",
+        "position": {
+          "x": 8750,
+          "y": -160
+        },
+        "data": {
+          "id": "n43_setVariable",
+          "label": "小海好感+15",
+          "variable": "小海好感度",
+          "op": "+=",
+          "value": "15",
+          "nextNodeId": "n44_setVariable"
+        }
+      },
+      {
+        "id": "n44_setVariable",
+        "type": "setVariable",
+        "position": {
+          "x": 9000,
+          "y": -160
+        },
+        "data": {
+          "id": "n44_setVariable",
+          "label": "勇气+30",
+          "variable": "勇气值",
+          "op": "+=",
+          "value": "30",
+          "nextNodeId": "n45_setVariable"
+        }
+      },
+      {
+        "id": "n45_setVariable",
+        "type": "setVariable",
+        "position": {
+          "x": 9250,
+          "y": -160
+        },
+        "data": {
+          "id": "n45_setVariable",
+          "label": "选择次数+1",
+          "variable": "选择次数",
+          "op": "+=",
+          "value": "1",
+          "nextNodeId": "n46_random"
+        }
+      },
+      {
+        "id": "n46_random",
+        "type": "random",
+        "position": {
+          "x": 9500,
+          "y": -160
+        },
+        "data": {
+          "id": "n46_random",
+          "label": "球场随机事件",
+          "branches": [
+            {
+              "id": "br_0",
+              "targetNodeId": "n47_dialog",
+              "weight": 4
+            },
+            {
+              "id": "br_1",
+              "targetNodeId": "n49_dialog",
+              "weight": 2
+            },
+            {
+              "id": "br_2",
+              "targetNodeId": "n51_dialog",
+              "weight": 1
+            }
+          ]
+        }
+      },
+      {
+        "id": "n47_dialog",
+        "type": "dialog",
+        "position": {
+          "x": 9750,
+          "y": -240
+        },
+        "data": {
+          "id": "n47_dialog",
+          "label": "普通比赛",
+          "character": "小海",
+          "content": "打得不错！下次再一起玩吧！",
+          "background": "assets/backgrounds/ComfyUI_00037_.png",
+          "nextNodeId": "n48_setVariable"
+        }
+      },
+      {
+        "id": "n48_setVariable",
+        "type": "setVariable",
+        "position": {
+          "x": 10000,
+          "y": -240
+        },
+        "data": {
+          "id": "n48_setVariable",
+          "label": "运气+10",
+          "variable": "运气值",
+          "op": "+=",
+          "value": "10",
+          "nextNodeId": "n58_goto"
+        }
+      },
+      {
+        "id": "n49_dialog",
+        "type": "dialog",
+        "position": {
+          "x": 9750,
+          "y": -120
+        },
+        "data": {
+          "id": "n49_dialog",
+          "label": "捡到钱包",
+          "character": "旁白",
+          "content": "在球场角落，你发现了一个钱包！里面有200元。",
+          "background": "assets/backgrounds/ComfyUI_00037_.png",
+          "nextNodeId": "n50_setVariable"
+        }
+      },
+      {
+        "id": "n50_setVariable",
+        "type": "setVariable",
+        "position": {
+          "x": 10000,
+          "y": -120
+        },
+        "data": {
+          "id": "n50_setVariable",
+          "label": "金钱+200",
+          "variable": "金钱",
+          "op": "+=",
+          "value": "200",
+          "nextNodeId": "n58_goto"
+        }
+      },
+      {
+        "id": "n51_dialog",
+        "type": "dialog",
+        "position": {
+          "x": 9750,
+          "y": 0
+        },
+        "data": {
+          "id": "n51_dialog",
+          "label": "发现密室",
+          "character": "旁白",
+          "content": "球场储物柜后面有一扇暗门！里面是一个被遗忘的社团活动室，墙上挂着往届学生的照片和留言。",
+          "background": "assets/backgrounds/ComfyUI_ANMIE_00024_.png",
+          "nextNodeId": "n52_achievement"
+        }
+      },
+      {
+        "id": "n52_achievement",
+        "type": "achievement",
+        "position": {
+          "x": 10000,
+          "y": 0
+        },
+        "data": {
+          "id": "n52_achievement",
+          "label": "解锁：秘密发现者",
+          "achievementId": "ach_secret",
+          "nextNodeId": "n53_setVariable"
+        }
+      },
+      {
+        "id": "n53_setVariable",
+        "type": "setVariable",
+        "position": {
+          "x": 10250,
+          "y": 0
+        },
+        "data": {
+          "id": "n53_setVariable",
+          "label": "运气+40",
+          "variable": "运气值",
+          "op": "+=",
+          "value": "40",
+          "nextNodeId": "n54_setVariable"
+        }
+      },
+      {
+        "id": "n54_setVariable",
+        "type": "setVariable",
+        "position": {
+          "x": 10500,
+          "y": 0
+        },
+        "data": {
+          "id": "n54_setVariable",
+          "label": "剧情+5",
+          "variable": "剧情进度",
+          "op": "+=",
+          "value": "5",
+          "nextNodeId": "n58_goto"
+        }
+      },
+      {
+        "id": "n55_dialog",
+        "type": "dialog",
+        "position": {
+          "x": 8500,
+          "y": 20
+        },
+        "data": {
+          "id": "n55_dialog",
+          "label": "婉拒邀请",
+          "character": "小海",
+          "content": "哦...好吧，学习确实很重要。加油！",
+          "background": "assets/backgrounds/ComfyUI_00005_.png",
+          "nextNodeId": "n56_setVariable"
+        }
+      },
+      {
+        "id": "n56_setVariable",
+        "type": "setVariable",
+        "position": {
+          "x": 8750,
+          "y": 20
+        },
+        "data": {
+          "id": "n56_setVariable",
+          "label": "学习进度+25",
+          "variable": "学习进度",
+          "op": "+=",
+          "value": "25",
+          "nextNodeId": "n57_setVariable"
+        }
+      },
+      {
+        "id": "n57_setVariable",
+        "type": "setVariable",
+        "position": {
+          "x": 9000,
+          "y": 20
+        },
+        "data": {
+          "id": "n57_setVariable",
+          "label": "小海好感+3",
+          "variable": "小海好感度",
+          "op": "+=",
+          "value": "3",
+          "nextNodeId": "n58_goto"
+        }
+      },
+      {
+        "id": "n58_goto",
+        "type": "goto",
+        "position": {
+          "x": 10750,
+          "y": -80
+        },
+        "data": {
+          "id": "n58_goto",
+          "label": "前往第四章",
+          "targetNodeId": "n59_label"
+        }
+      },
+      {
+        "id": "n59_label",
+        "type": "label",
+        "position": {
+          "x": 11000,
+          "y": -80
+        },
+        "data": {
+          "id": "n59_label",
+          "label": "★ 第四章：学园祭",
+          "color": "#E88080"
+        }
+      },
+      {
+        "id": "n60_cg",
+        "type": "cg",
+        "position": {
+          "x": 11250,
+          "y": -80
+        },
+        "data": {
+          "id": "n60_cg",
+          "label": "学园祭CG",
+          "src": "assets/backgrounds/festival.png",
+          "transition": "fade",
+          "duration": 800,
+          "nextNodeId": "n61_dialog"
+        }
+      },
+      {
+        "id": "n61_dialog",
+        "type": "dialog",
+        "position": {
+          "x": 11500,
+          "y": -80
+        },
+        "data": {
+          "id": "n61_dialog",
+          "label": "学园祭开始",
+          "character": "旁白",
+          "content": "学园祭到了！整个学校张灯结彩，到处都是欢声笑语。小樱在樱花树下等你。",
+          "background": "assets/backgrounds/festival.png",
+          "nextNodeId": "n62_savePoint"
+        }
+      },
+      {
+        "id": "n62_savePoint",
+        "type": "savePoint",
+        "position": {
+          "x": 11750,
+          "y": -80
+        },
+        "data": {
+          "id": "n62_savePoint",
+          "label": "存档：学园祭",
+          "slotLabel": "学园祭前",
+          "nextNodeId": "n63_dialog"
+        }
+      },
+      {
+        "id": "n63_dialog",
+        "type": "dialog",
+        "position": {
+          "x": 12000,
+          "y": -80
+        },
+        "data": {
+          "id": "n63_dialog",
+          "label": "樱花树下的约定",
+          "character": "小樱",
+          "content": "你来啦！今天的学园祭很热闹呢。那个...我有话想对你说...",
+          "background": "assets/backgrounds/ComfyUI_ANMIE_00008_.png",
+          "nextNodeId": "n64_choice"
+        }
+      },
+      {
+        "id": "n64_choice",
+        "type": "choice",
+        "position": {
+          "x": 12250,
+          "y": -80
+        },
+        "data": {
+          "id": "n64_choice",
+          "label": "关键选择",
+          "title": "小樱似乎有话要说...",
+          "options": [
+            {
+              "id": "opt_0",
+              "text": "抢先表白",
+              "nextNodeId": "n65_dialog"
+            },
+            {
+              "id": "opt_1",
+              "text": "等待",
+              "nextNodeId": "n69_dialog"
+            },
+            {
+              "id": "opt_2",
+              "text": "岔开话题",
+              "nextNodeId": "n72_dialog"
+            }
+          ]
+        }
+      },
+      {
+        "id": "n65_dialog",
+        "type": "dialog",
+        "position": {
+          "x": 12500,
+          "y": -220
+        },
+        "data": {
+          "id": "n65_dialog",
+          "label": "勇敢表白",
+          "character": "小樱",
+          "content": "！（脸红）我也...我也喜欢你！从你转学来的第一天就...",
+          "background": "assets/backgrounds/ComfyUI_ANMIE_00008_.png",
+          "nextNodeId": "n66_setVariable"
+        }
+      },
+      {
+        "id": "n66_setVariable",
+        "type": "setVariable",
+        "position": {
+          "x": 12750,
+          "y": -220
+        },
+        "data": {
+          "id": "n66_setVariable",
+          "label": "勇气+50",
+          "variable": "勇气值",
+          "op": "+=",
+          "value": "50",
+          "nextNodeId": "n67_setVariable"
+        }
+      },
+      {
+        "id": "n67_setVariable",
+        "type": "setVariable",
+        "position": {
+          "x": 13000,
+          "y": -220
+        },
+        "data": {
+          "id": "n67_setVariable",
+          "label": "小樱好感+30",
+          "variable": "小樱好感度",
+          "op": "+=",
+          "value": "30",
+          "nextNodeId": "n68_setVariable"
+        }
+      },
+      {
+        "id": "n68_setVariable",
+        "type": "setVariable",
+        "position": {
+          "x": 13250,
+          "y": -220
+        },
+        "data": {
+          "id": "n68_setVariable",
+          "label": "剧情+5",
+          "variable": "剧情进度",
+          "op": "+=",
+          "value": "5",
+          "nextNodeId": "n76_goto"
+        }
+      },
+      {
+        "id": "n69_dialog",
+        "type": "dialog",
+        "position": {
+          "x": 12500,
+          "y": -80
+        },
+        "data": {
+          "id": "n69_dialog",
+          "label": "等待小樱",
+          "character": "小樱",
+          "content": "（深呼吸）...其实我一直很感谢你对我的帮助。你是一个很温柔的人。",
+          "background": "assets/backgrounds/ComfyUI_ANMIE_00008_.png",
+          "nextNodeId": "n70_setVariable"
+        }
+      },
+      {
+        "id": "n70_setVariable",
+        "type": "setVariable",
+        "position": {
+          "x": 12750,
+          "y": -80
+        },
+        "data": {
+          "id": "n70_setVariable",
+          "label": "勇气+15",
+          "variable": "勇气值",
+          "op": "+=",
+          "value": "15",
+          "nextNodeId": "n71_setVariable"
+        }
+      },
+      {
+        "id": "n71_setVariable",
+        "type": "setVariable",
+        "position": {
+          "x": 13000,
+          "y": -80
+        },
+        "data": {
+          "id": "n71_setVariable",
+          "label": "小樱好感+15",
+          "variable": "小樱好感度",
+          "op": "+=",
+          "value": "15",
+          "nextNodeId": "n76_goto"
+        }
+      },
+      {
+        "id": "n72_dialog",
+        "type": "dialog",
+        "position": {
+          "x": 12500,
+          "y": 60
+        },
+        "data": {
+          "id": "n72_dialog",
+          "label": "岔开话题",
+          "character": "小樱",
+          "content": "嗯...章鱼烧确实很好吃呢...（眼神有些失落）",
+          "background": "assets/backgrounds/ComfyUI_ANMIE_00008_.png",
+          "nextNodeId": "n73_setVariable"
+        }
+      },
+      {
+        "id": "n73_setVariable",
+        "type": "setVariable",
+        "position": {
+          "x": 12750,
+          "y": 60
+        },
+        "data": {
+          "id": "n73_setVariable",
+          "label": "勇气+0",
+          "variable": "勇气值",
+          "op": "=",
+          "value": "0",
+          "nextNodeId": "n74_setVariable"
+        }
+      },
+      {
+        "id": "n74_setVariable",
+        "type": "setVariable",
+        "position": {
+          "x": 13000,
+          "y": 60
+        },
+        "data": {
+          "id": "n74_setVariable",
+          "label": "小樱好感-5",
+          "variable": "小樱好感度",
+          "op": "+=",
+          "value": "-5",
+          "nextNodeId": "n75_setVariable"
+        }
+      },
+      {
+        "id": "n75_setVariable",
+        "type": "setVariable",
+        "position": {
+          "x": 13250,
+          "y": 60
+        },
+        "data": {
+          "id": "n75_setVariable",
+          "label": "选择次数再+1",
+          "variable": "选择次数",
+          "op": "+=",
+          "value": "1",
+          "nextNodeId": "n76_goto"
+        }
+      },
+      {
+        "id": "n76_goto",
+        "type": "goto",
+        "position": {
+          "x": 13500,
+          "y": -80
+        },
+        "data": {
+          "id": "n76_goto",
+          "label": "烟花大会",
+          "targetNodeId": "n77_label"
+        }
+      },
+      {
+        "id": "n77_label",
+        "type": "label",
+        "position": {
+          "x": 13750,
+          "y": -80
+        },
+        "data": {
+          "id": "n77_label",
+          "label": "★ 烟花大会",
+          "color": "#D8A030"
+        }
+      },
+      {
+        "id": "n78_audio",
+        "type": "audio",
+        "position": {
+          "x": 14000,
+          "y": -80
+        },
+        "data": {
+          "id": "n78_audio",
+          "label": "烟花BGM",
+          "audioType": "bgm",
+          "action": "play",
+          "src": "assets/audio/fireworks_bgm.mp3",
+          "loop": false,
+          "volume": 1,
+          "nextNodeId": "n79_cg"
+        }
+      },
+      {
+        "id": "n79_cg",
+        "type": "cg",
+        "position": {
+          "x": 14250,
+          "y": -80
+        },
+        "data": {
+          "id": "n79_cg",
+          "label": "烟花CG",
+          "src": "assets/backgrounds/fireworks.png",
+          "transition": "zoom",
+          "duration": 1000,
+          "nextNodeId": "n80_timer"
+        }
+      },
+      {
+        "id": "n80_timer",
+        "type": "timer",
+        "position": {
+          "x": 14500,
+          "y": -80
+        },
+        "data": {
+          "id": "n80_timer",
+          "label": "烟花倒计时",
+          "mode": "countdown",
+          "duration": 2000,
+          "variable": "计时结果",
+          "nextNodeId": "n81_label"
+        }
+      },
+      {
+        "id": "n81_label",
+        "type": "label",
+        "position": {
+          "x": 14750,
+          "y": -80
+        },
+        "data": {
+          "id": "n81_label",
+          "label": "★ 最终章：结局",
+          "color": "#A088D0"
+        }
+      },
+      {
+        "id": "n82_dialog",
+        "type": "dialog",
+        "position": {
+          "x": 15000,
+          "y": -80
+        },
+        "data": {
+          "id": "n82_dialog",
+          "label": "结局开始",
+          "character": "旁白",
+          "content": "烟花在夜空中绽放，照亮了每个人的脸庞。故事即将迎来结局。",
+          "background": "assets/backgrounds/ComfyUI_00007_.png",
+          "nextNodeId": "n83_condition"
+        }
+      },
+      {
+        "id": "n83_condition",
+        "type": "condition",
+        "position": {
+          "x": 15250,
+          "y": -80
+        },
+        "data": {
+          "id": "n83_condition",
+          "label": "真结局条件",
+          "expression": "小樱好感度 >= 40 && 勇气值 >= 60",
+          "trueNextId": "n84_dialog",
+          "falseNextId": "n88_condition"
+        }
+      },
+      {
+        "id": "n84_dialog",
+        "type": "dialog",
+        "position": {
+          "x": 15500,
+          "y": -200
+        },
+        "data": {
+          "id": "n84_dialog",
+          "label": "真结局",
+          "character": "小樱",
+          "content": "谢谢你一直以来的陪伴。和你在一起的每一天，都是我珍贵的回忆。从今往后，也请多关照！",
+          "background": "assets/backgrounds/sakura_end.png",
+          "nextNodeId": "n85_steamAchievement"
+        }
+      },
+      {
+        "id": "n85_steamAchievement",
+        "type": "steamAchievement",
+        "position": {
+          "x": 15750,
+          "y": -200
+        },
+        "data": {
+          "id": "n85_steamAchievement",
+          "label": "Steam真结局成就",
+          "achievementId": "ach_true_love",
+          "nextNodeId": "n86_achievement"
+        }
+      },
+      {
+        "id": "n86_achievement",
+        "type": "achievement",
+        "position": {
+          "x": 16000,
+          "y": -200
+        },
+        "data": {
+          "id": "n86_achievement",
+          "label": "解锁真爱成就",
+          "achievementId": "ach_true_love",
+          "nextNodeId": "n87_end"
+        }
+      },
+      {
+        "id": "n87_end",
+        "type": "end",
+        "position": {
+          "x": 16250,
+          "y": -200
+        },
+        "data": {
+          "id": "n87_end",
+          "label": "真结局",
+          "endingType": "true",
+          "message": "樱花树下的约定，将永远留在两颗相爱的心中。感谢游玩！",
+          "background": "assets/backgrounds/sakura_end.png"
+        }
+      },
+      {
+        "id": "n88_condition",
+        "type": "condition",
+        "position": {
+          "x": 15500,
+          "y": 0
+        },
+        "data": {
+          "id": "n88_condition",
+          "label": "好结局条件",
+          "expression": "小樱好感度 >= 20",
+          "trueNextId": "n89_dialog",
+          "falseNextId": "n91_dialog"
+        }
+      },
+      {
+        "id": "n89_dialog",
+        "type": "dialog",
+        "position": {
+          "x": 15750,
+          "y": 0
+        },
+        "data": {
+          "id": "n89_dialog",
+          "label": "好结局",
+          "character": "小樱",
+          "content": "这一年过得很开心。虽然有些话没能说出口，但这些回忆我会永远珍藏。",
+          "background": "assets/backgrounds/sakura_end.png",
+          "nextNodeId": "n90_end"
+        }
+      },
+      {
+        "id": "n90_end",
+        "type": "end",
+        "position": {
+          "x": 16000,
+          "y": 0
+        },
+        "data": {
+          "id": "n90_end",
+          "label": "好结局",
+          "endingType": "good",
+          "message": "虽然没有表白，但友情的羁绊同样珍贵。故事仍将继续...",
+          "background": "assets/backgrounds/school_end.png"
+        }
+      },
+      {
+        "id": "n91_dialog",
+        "type": "dialog",
+        "position": {
+          "x": 15750,
+          "y": 120
+        },
+        "data": {
+          "id": "n91_dialog",
+          "label": "普通结局",
+          "character": "旁白",
+          "content": "樱花飘落，春天结束了。你与新朋友们的关系还很浅，但未来还有很长的路要走。",
+          "background": "assets/backgrounds/school_end.png",
+          "nextNodeId": "n92_animation"
+        }
+      },
+      {
+        "id": "n92_animation",
+        "type": "animation",
+        "position": {
+          "x": 16000,
+          "y": 120
+        },
+        "data": {
+          "id": "n92_animation",
+          "label": "樱花飘落",
+          "target": "screen",
+          "action": "exit",
+          "position": "left",
+          "duration": 800,
+          "nextNodeId": "n93_wait"
+        }
+      },
+      {
+        "id": "n93_wait",
+        "type": "wait",
+        "position": {
+          "x": 16250,
+          "y": 120
+        },
+        "data": {
+          "id": "n93_wait",
+          "label": "最终等待",
+          "duration": 1000,
+          "nextNodeId": "n94_end"
+        }
+      },
+      {
+        "id": "n94_end",
+        "type": "end",
+        "position": {
+          "x": 16500,
+          "y": 120
+        },
+        "data": {
+          "id": "n94_end",
+          "label": "普通结局",
+          "endingType": "normal",
+          "message": "故事平淡地结束了。也许下一次，你会做出不同的选择。"
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_n1_dialog_n2_savePoint",
+        "source": "n1_dialog",
+        "target": "n2_savePoint"
+      },
+      {
+        "id": "edge_n2_savePoint_n3_setVariable",
+        "source": "n2_savePoint",
+        "target": "n3_setVariable"
+      },
+      {
+        "id": "edge_n3_setVariable_n4_dialog",
+        "source": "n3_setVariable",
+        "target": "n4_dialog"
+      },
+      {
+        "id": "edge_n4_dialog_n5_dialog",
+        "source": "n4_dialog",
+        "target": "n5_dialog"
+      },
+      {
+        "id": "edge_n5_dialog_n6_setVariable",
+        "source": "n5_dialog",
+        "target": "n6_setVariable"
+      },
+      {
+        "id": "edge_n6_setVariable_n7_setVariable",
+        "source": "n6_setVariable",
+        "target": "n7_setVariable"
+      },
+      {
+        "id": "edge_n7_setVariable_n8_setVariable",
+        "source": "n7_setVariable",
+        "target": "n8_setVariable"
+      },
+      {
+        "id": "edge_n8_setVariable_n9_choice",
+        "source": "n8_setVariable",
+        "target": "n9_choice"
+      },
+      {
+        "id": "edge_n9_choice_n10_dialog_opt_0",
+        "source": "n9_choice",
+        "target": "n10_dialog",
+        "label": "热情"
+      },
+      {
+        "id": "edge_n9_choice_n14_dialog_opt_1",
+        "source": "n9_choice",
+        "target": "n14_dialog",
+        "label": "腼腆"
+      },
+      {
+        "id": "edge_n9_choice_n17_dialog_opt_2",
+        "source": "n9_choice",
+        "target": "n17_dialog",
+        "label": "冷漠"
+      },
+      {
+        "id": "edge_n10_dialog_n11_setVariable",
+        "source": "n10_dialog",
+        "target": "n11_setVariable"
+      },
+      {
+        "id": "edge_n11_setVariable_n12_setVariable",
+        "source": "n11_setVariable",
+        "target": "n12_setVariable"
+      },
+      {
+        "id": "edge_n12_setVariable_n13_setVariable",
+        "source": "n12_setVariable",
+        "target": "n13_setVariable"
+      },
+      {
+        "id": "edge_n13_setVariable_n20_goto",
+        "source": "n13_setVariable",
+        "target": "n20_goto"
+      },
+      {
+        "id": "edge_n14_dialog_n15_setVariable",
+        "source": "n14_dialog",
+        "target": "n15_setVariable"
+      },
+      {
+        "id": "edge_n15_setVariable_n16_setVariable",
+        "source": "n15_setVariable",
+        "target": "n16_setVariable"
+      },
+      {
+        "id": "edge_n16_setVariable_n20_goto",
+        "source": "n16_setVariable",
+        "target": "n20_goto"
+      },
+      {
+        "id": "edge_n17_dialog_n18_setVariable",
+        "source": "n17_dialog",
+        "target": "n18_setVariable"
+      },
+      {
+        "id": "edge_n18_setVariable_n19_setVariable",
+        "source": "n18_setVariable",
+        "target": "n19_setVariable"
+      },
+      {
+        "id": "edge_n19_setVariable_n20_goto",
+        "source": "n19_setVariable",
+        "target": "n20_goto"
+      },
+      {
+        "id": "edge_n20_goto_★ 第二章：校园生活",
+        "source": "n20_goto",
+        "target": "n21_label"
+      },
+      {
+        "id": "edge_n22_dialog_n23_audio",
+        "source": "n22_dialog",
+        "target": "n23_audio"
+      },
+      {
+        "id": "edge_n23_audio_n24_animation",
+        "source": "n23_audio",
+        "target": "n24_animation"
+      },
+      {
+        "id": "edge_n24_animation_n25_moveCharacter",
+        "source": "n24_animation",
+        "target": "n25_moveCharacter"
+      },
+      {
+        "id": "edge_n25_moveCharacter_n26_dialog",
+        "source": "n25_moveCharacter",
+        "target": "n26_dialog"
+      },
+      {
+        "id": "edge_n26_dialog_n27_timer",
+        "source": "n26_dialog",
+        "target": "n27_timer"
+      },
+      {
+        "id": "edge_n27_timer_n28_dialog",
+        "source": "n27_timer",
+        "target": "n28_dialog"
+      },
+      {
+        "id": "edge_n28_dialog_n29_setVariable",
+        "source": "n28_dialog",
+        "target": "n29_setVariable"
+      },
+      {
+        "id": "edge_n29_setVariable_n30_condition",
+        "source": "n29_setVariable",
+        "target": "n30_condition"
+      },
+      {
+        "id": "edge_n30_condition_true",
+        "source": "n30_condition",
+        "target": "n31_dialog",
+        "label": "true"
+      },
+      {
+        "id": "edge_n30_condition_false",
+        "source": "n30_condition",
+        "target": "n34_dialog",
+        "label": "false"
+      },
+      {
+        "id": "edge_n31_dialog_n32_setVariable",
+        "source": "n31_dialog",
+        "target": "n32_setVariable"
+      },
+      {
+        "id": "edge_n32_setVariable_n33_setVariable",
+        "source": "n32_setVariable",
+        "target": "n33_setVariable"
+      },
+      {
+        "id": "edge_n33_setVariable_n36_goto",
+        "source": "n33_setVariable",
+        "target": "n36_goto"
+      },
+      {
+        "id": "edge_n34_dialog_n35_setVariable",
+        "source": "n34_dialog",
+        "target": "n35_setVariable"
+      },
+      {
+        "id": "edge_n35_setVariable_n36_goto",
+        "source": "n35_setVariable",
+        "target": "n36_goto"
+      },
+      {
+        "id": "edge_n36_goto_★ 第三章：操场邂逅",
+        "source": "n36_goto",
+        "target": "n37_label"
+      },
+      {
+        "id": "edge_n38_wait_n39_audio",
+        "source": "n38_wait",
+        "target": "n39_audio"
+      },
+      {
+        "id": "edge_n39_audio_n40_dialog",
+        "source": "n39_audio",
+        "target": "n40_dialog"
+      },
+      {
+        "id": "edge_n40_dialog_n41_choice",
+        "source": "n40_dialog",
+        "target": "n41_choice"
+      },
+      {
+        "id": "edge_n41_choice_n42_dialog_opt_0",
+        "source": "n41_choice",
+        "target": "n42_dialog",
+        "label": "去球场"
+      },
+      {
+        "id": "edge_n41_choice_n55_dialog_opt_1",
+        "source": "n41_choice",
+        "target": "n55_dialog",
+        "label": "做作业"
+      },
+      {
+        "id": "edge_n42_dialog_n43_setVariable",
+        "source": "n42_dialog",
+        "target": "n43_setVariable"
+      },
+      {
+        "id": "edge_n43_setVariable_n44_setVariable",
+        "source": "n43_setVariable",
+        "target": "n44_setVariable"
+      },
+      {
+        "id": "edge_n44_setVariable_n45_setVariable",
+        "source": "n44_setVariable",
+        "target": "n45_setVariable"
+      },
+      {
+        "id": "edge_n45_setVariable_n46_random",
+        "source": "n45_setVariable",
+        "target": "n46_random"
+      },
+      {
+        "id": "edge_n46_random_n47_dialog_br_0",
+        "source": "n46_random",
+        "target": "n47_dialog",
+        "label": "4"
+      },
+      {
+        "id": "edge_n46_random_n49_dialog_br_1",
+        "source": "n46_random",
+        "target": "n49_dialog",
+        "label": "2"
+      },
+      {
+        "id": "edge_n46_random_n51_dialog_br_2",
+        "source": "n46_random",
+        "target": "n51_dialog",
+        "label": "1"
+      },
+      {
+        "id": "edge_n47_dialog_n48_setVariable",
+        "source": "n47_dialog",
+        "target": "n48_setVariable"
+      },
+      {
+        "id": "edge_n48_setVariable_n58_goto",
+        "source": "n48_setVariable",
+        "target": "n58_goto"
+      },
+      {
+        "id": "edge_n49_dialog_n50_setVariable",
+        "source": "n49_dialog",
+        "target": "n50_setVariable"
+      },
+      {
+        "id": "edge_n50_setVariable_n58_goto",
+        "source": "n50_setVariable",
+        "target": "n58_goto"
+      },
+      {
+        "id": "edge_n51_dialog_n52_achievement",
+        "source": "n51_dialog",
+        "target": "n52_achievement"
+      },
+      {
+        "id": "edge_n52_achievement_n53_setVariable",
+        "source": "n52_achievement",
+        "target": "n53_setVariable"
+      },
+      {
+        "id": "edge_n53_setVariable_n54_setVariable",
+        "source": "n53_setVariable",
+        "target": "n54_setVariable"
+      },
+      {
+        "id": "edge_n54_setVariable_n58_goto",
+        "source": "n54_setVariable",
+        "target": "n58_goto"
+      },
+      {
+        "id": "edge_n55_dialog_n56_setVariable",
+        "source": "n55_dialog",
+        "target": "n56_setVariable"
+      },
+      {
+        "id": "edge_n56_setVariable_n57_setVariable",
+        "source": "n56_setVariable",
+        "target": "n57_setVariable"
+      },
+      {
+        "id": "edge_n57_setVariable_n58_goto",
+        "source": "n57_setVariable",
+        "target": "n58_goto"
+      },
+      {
+        "id": "edge_n58_goto_★ 第四章：学园祭",
+        "source": "n58_goto",
+        "target": "n59_label"
+      },
+      {
+        "id": "edge_n60_cg_n61_dialog",
+        "source": "n60_cg",
+        "target": "n61_dialog"
+      },
+      {
+        "id": "edge_n61_dialog_n62_savePoint",
+        "source": "n61_dialog",
+        "target": "n62_savePoint"
+      },
+      {
+        "id": "edge_n62_savePoint_n63_dialog",
+        "source": "n62_savePoint",
+        "target": "n63_dialog"
+      },
+      {
+        "id": "edge_n63_dialog_n64_choice",
+        "source": "n63_dialog",
+        "target": "n64_choice"
+      },
+      {
+        "id": "edge_n64_choice_n65_dialog_opt_0",
+        "source": "n64_choice",
+        "target": "n65_dialog",
+        "label": "抢先表白"
+      },
+      {
+        "id": "edge_n64_choice_n69_dialog_opt_1",
+        "source": "n64_choice",
+        "target": "n69_dialog",
+        "label": "等待"
+      },
+      {
+        "id": "edge_n64_choice_n72_dialog_opt_2",
+        "source": "n64_choice",
+        "target": "n72_dialog",
+        "label": "岔开话题"
+      },
+      {
+        "id": "edge_n65_dialog_n66_setVariable",
+        "source": "n65_dialog",
+        "target": "n66_setVariable"
+      },
+      {
+        "id": "edge_n66_setVariable_n67_setVariable",
+        "source": "n66_setVariable",
+        "target": "n67_setVariable"
+      },
+      {
+        "id": "edge_n67_setVariable_n68_setVariable",
+        "source": "n67_setVariable",
+        "target": "n68_setVariable"
+      },
+      {
+        "id": "edge_n68_setVariable_n76_goto",
+        "source": "n68_setVariable",
+        "target": "n76_goto"
+      },
+      {
+        "id": "edge_n69_dialog_n70_setVariable",
+        "source": "n69_dialog",
+        "target": "n70_setVariable"
+      },
+      {
+        "id": "edge_n70_setVariable_n71_setVariable",
+        "source": "n70_setVariable",
+        "target": "n71_setVariable"
+      },
+      {
+        "id": "edge_n71_setVariable_n76_goto",
+        "source": "n71_setVariable",
+        "target": "n76_goto"
+      },
+      {
+        "id": "edge_n72_dialog_n73_setVariable",
+        "source": "n72_dialog",
+        "target": "n73_setVariable"
+      },
+      {
+        "id": "edge_n73_setVariable_n74_setVariable",
+        "source": "n73_setVariable",
+        "target": "n74_setVariable"
+      },
+      {
+        "id": "edge_n74_setVariable_n75_setVariable",
+        "source": "n74_setVariable",
+        "target": "n75_setVariable"
+      },
+      {
+        "id": "edge_n75_setVariable_n76_goto",
+        "source": "n75_setVariable",
+        "target": "n76_goto"
+      },
+      {
+        "id": "edge_n76_goto_★ 烟花大会",
+        "source": "n76_goto",
+        "target": "n77_label"
+      },
+      {
+        "id": "edge_n78_audio_n79_cg",
+        "source": "n78_audio",
+        "target": "n79_cg"
+      },
+      {
+        "id": "edge_n79_cg_n80_timer",
+        "source": "n79_cg",
+        "target": "n80_timer"
+      },
+      {
+        "id": "edge_n80_timer_n81_label",
+        "source": "n80_timer",
+        "target": "n81_label"
+      },
+      {
+        "id": "edge_n82_dialog_n83_condition",
+        "source": "n82_dialog",
+        "target": "n83_condition"
+      },
+      {
+        "id": "edge_n83_condition_true",
+        "source": "n83_condition",
+        "target": "n84_dialog",
+        "label": "true"
+      },
+      {
+        "id": "edge_n83_condition_false",
+        "source": "n83_condition",
+        "target": "n88_condition",
+        "label": "false"
+      },
+      {
+        "id": "edge_n84_dialog_n85_steamAchievement",
+        "source": "n84_dialog",
+        "target": "n85_steamAchievement"
+      },
+      {
+        "id": "edge_n85_steamAchievement_n86_achievement",
+        "source": "n85_steamAchievement",
+        "target": "n86_achievement"
+      },
+      {
+        "id": "edge_n86_achievement_n87_end",
+        "source": "n86_achievement",
+        "target": "n87_end"
+      },
+      {
+        "id": "edge_n88_condition_true",
+        "source": "n88_condition",
+        "target": "n89_dialog",
+        "label": "true"
+      },
+      {
+        "id": "edge_n88_condition_false",
+        "source": "n88_condition",
+        "target": "n91_dialog",
+        "label": "false"
+      },
+      {
+        "id": "edge_n89_dialog_n90_end",
+        "source": "n89_dialog",
+        "target": "n90_end"
+      },
+      {
+        "id": "edge_n91_dialog_n92_animation",
+        "source": "n91_dialog",
+        "target": "n92_animation"
+      },
+      {
+        "id": "edge_n92_animation_n93_wait",
+        "source": "n92_animation",
+        "target": "n93_wait"
+      },
+      {
+        "id": "edge_n93_wait_n94_end",
+        "source": "n93_wait",
+        "target": "n94_end"
+      }
+    ]
+  },
+  "script": "@label(id: \"n0_label\", label: \"★ 第一章入口\", color: \"#F0A060\") {\n}\n\n@dialog(id: \"n1_dialog\", character: \"旁白\", label: \"序幕：樱花盛开的季节\") {\n  content: \"春天到了，樱花盛开。你作为转学生来到了这所学校。一段关于青春、友情与爱的故事即将展开……\"\n  background: \"assets/backgrounds/sakura_tree.png\"\n  next: \"n2_savePoint\"\n}\n\n@savePoint(id: \"n2_savePoint\", slotLabel: \"故事开始\", label: \"存档：开始\") {\n  next: \"n3_setVariable\"\n}\n\n@setVar(id: \"n3_setVariable\", var: \"剧情进度\", op: \"=\", value: \"1\", label: \"初始化变量\") {\n  next: \"n4_dialog\"\n}\n\n@dialog(id: \"n4_dialog\", character: \"旁白\", label: \"转学第一天\") {\n  content: \"你走进教室，阳光透过窗户洒在课桌上。教室里已经有不少同学了。\"\n  background: \"assets/backgrounds/ComfyUI_00001_.png\"\n  next: \"n5_dialog\"\n}\n\n@dialog(id: \"n5_dialog\", character: \"小樱\", label: \"遇见小樱\") {\n  content: \"你好呀！你是新来的转学生吧？我叫小樱，很高兴认识你！有什么需要帮忙的尽管说哦~\"\n  background: \"assets/backgrounds/ComfyUI_ANMIE_00001_.png\"\n  next: \"n6_setVariable\"\n}\n\n@setVar(id: \"n6_setVariable\", var: \"小樱好感度\", op: \"+=\", value: \"10\", label: \"小樱好感+10\") {\n  next: \"n7_setVariable\"\n}\n\n@setVar(id: \"n7_setVariable\", var: \"小樱好感度\", op: \"+=\", value: \"5\", label: \"小樱好感+5\") {\n  next: \"n8_setVariable\"\n}\n\n@setVar(id: \"n8_setVariable\", var: \"剧情进度\", op: \"+=\", value: \"1\", label: \"剧情+1\") {\n  next: \"n9_choice\"\n}\n\n@choice(id: \"n9_choice\", title: \"小樱看起来很友善，你要怎么回应？\", label: \"第一次选择：如何回应？\") {\n  option(\"热情\") { next: \"n10_dialog\" }\n  option(\"腼腆\") { next: \"n14_dialog\" }\n  option(\"冷漠\") { next: \"n17_dialog\" }\n}\n\n@dialog(id: \"n10_dialog\", character: \"小樱\", label: \"热情回应\") {\n  content: \"哈哈，你很开朗呢！来，我带你参观一下学校吧！\"\n  background: \"assets/backgrounds/ComfyUI_ANMIE_00002_.png\"\n  next: \"n11_setVariable\"\n}\n\n@setVar(id: \"n11_setVariable\", var: \"小樱好感度\", op: \"+=\", value: \"15\", label: \"小樱好感+15\") {\n  next: \"n12_setVariable\"\n}\n\n@setVar(id: \"n12_setVariable\", var: \"勇气值\", op: \"+=\", value: \"20\", label: \"勇气+20\") {\n  next: \"n13_setVariable\"\n}\n\n@setVar(id: \"n13_setVariable\", var: \"剧情进度\", op: \"+=\", value: \"2\", label: \"剧情+2\") {\n  next: \"n20_goto\"\n}\n\n@dialog(id: \"n14_dialog\", character: \"小樱\", label: \"腼腆回应\") {\n  content: \"不用害羞啦~ 大家都是同学。来，我帮你熟悉一下环境。\"\n  background: \"assets/backgrounds/ComfyUI_ANMIE_00002_.png\"\n  next: \"n15_setVariable\"\n}\n\n@setVar(id: \"n15_setVariable\", var: \"小樱好感度\", op: \"+=\", value: \"8\", label: \"小樱好感+8\") {\n  next: \"n16_setVariable\"\n}\n\n@setVar(id: \"n16_setVariable\", var: \"勇气值\", op: \"+=\", value: \"5\", label: \"勇气+5\") {\n  next: \"n20_goto\"\n}\n\n@dialog(id: \"n17_dialog\", character: \"小樱\", label: \"冷漠回应\") {\n  content: \"（小声嘀咕）看来新同学不太爱说话呢...不过没关系，慢慢就会熟悉的。\"\n  background: \"assets/backgrounds/ComfyUI_00008_.png\"\n  next: \"n18_setVariable\"\n}\n\n@setVar(id: \"n18_setVariable\", var: \"小樱好感度\", op: \"+=\", value: \"2\", label: \"小樱好感+2\") {\n  next: \"n19_setVariable\"\n}\n\n@setVar(id: \"n19_setVariable\", var: \"选择次数\", op: \"+=\", value: \"1\", label: \"选择次数+1\") {\n  next: \"n20_goto\"\n}\n\n@goto(id: \"n20_goto\", target: \"★ 第二章：校园生活\", label: \"前往第二章\") {\n}\n\n@label(id: \"n21_label\", label: \"★ 第二章：校园生活\", color: \"#6BA4D8\") {\n}\n\n@dialog(id: \"n22_dialog\", character: \"旁白\", label: \"第二章开始\") {\n  content: \"几周过去了，你逐渐适应了新的校园生活。今天有一场重要的随堂测验。\"\n  background: \"assets/backgrounds/ComfyUI_00002_.png\"\n  next: \"n23_audio\"\n}\n\n@audio(id: \"n23_audio\", type: \"bgm\", action: \"play\", src: \"assets/audio/classroom_bgm.mp3\", loop: \"true\", volume: \"1\", label: \"教室BGM\") {\n  next: \"n24_animation\"\n}\n\n@anim(id: \"n24_animation\", target: \"screen\", action: \"enter\", duration: \"600\", position: \"right\", label: \"林老师入场\") {\n  next: \"n25_moveCharacter\"\n}\n\n@moveCharacter(id: \"n25_moveCharacter\", target: \"旁白\", from: \"right\", to: \"center\", duration: 1000, easing: \"ease-out\", label: \"老师走到讲台\") {\n  next: \"n26_dialog\"\n}\n\n@dialog(id: \"n26_dialog\", character: \"林老师\", label: \"林老师讲话\") {\n  content: \"同学们好！今天进行随堂测验。请大家认真答题，考试时间30分钟。\"\n  background: \"assets/backgrounds/ComfyUI_00002_.png\"\n  next: \"n27_timer\"\n}\n\n@timer(id: \"n27_timer\", mode: \"countdown\", duration: 3000, label: \"考试倒计时\", variable: \"计时结果\") {\n  next: \"n28_dialog\"\n}\n\n@dialog(id: \"n28_dialog\", character: \"林老师\", label: \"考试结束\") {\n  content: \"时间到！请交卷。希望大家都发挥出了自己的水平。\"\n  background: \"assets/backgrounds/ComfyUI_00002_.png\"\n  next: \"n29_setVariable\"\n}\n\n@setVar(id: \"n29_setVariable\", var: \"学习进度\", op: \"+=\", value: \"30\", label: \"学习进度提升\") {\n  next: \"n30_condition\"\n}\n\n@condition(id: \"n30_condition\", label: \"考试通过判断\") {\n  expr: \"学习进度 >= 30\"\n  true: \"n31_dialog\"\n  false: \"n34_dialog\"\n}\n\n@dialog(id: \"n31_dialog\", character: \"林老师\", label: \"通过考试\") {\n  content: \"不错，你通过了测验！看来这段时间的努力没有白费。\"\n  background: \"assets/backgrounds/ComfyUI_00004_.png\"\n  next: \"n32_setVariable\"\n}\n\n@setVar(id: \"n32_setVariable\", var: \"金钱\", op: \"+=\", value: \"100\", label: \"获得奖励100元\") {\n  next: \"n33_setVariable\"\n}\n\n@setVar(id: \"n33_setVariable\", var: \"剧情进度\", op: \"+=\", value: \"3\", label: \"剧情+3\") {\n  next: \"n36_goto\"\n}\n\n@dialog(id: \"n34_dialog\", character: \"林老师\", label: \"未通过考试\") {\n  content: \"很遗憾，这次没有通过。不过别灰心，还有补考的机会。\"\n  background: \"assets/backgrounds/ComfyUI_00004_.png\"\n  next: \"n35_setVariable\"\n}\n\n@setVar(id: \"n35_setVariable\", var: \"学习进度\", op: \"+=\", value: \"15\", label: \"学习进度+15（补课）\") {\n  next: \"n36_goto\"\n}\n\n@goto(id: \"n36_goto\", target: \"★ 第三章：操场邂逅\", label: \"遇见小海\") {\n}\n\n@label(id: \"n37_label\", label: \"★ 第三章：操场邂逅\", color: \"#74B88A\") {\n}\n\n@wait(id: \"n38_wait\", duration: \"500\", label: \"课间休息\") {\n  next: \"n39_audio\"\n}\n\n@audio(id: \"n39_audio\", type: \"bgm\", action: \"play\", src: \"assets/audio/sports_bgm.mp3\", loop: \"false\", volume: \"1\", label: \"操场BGM\") {\n  next: \"n40_dialog\"\n}\n\n@dialog(id: \"n40_dialog\", character: \"小海\", label: \"遇见小海\") {\n  content: \"嘿！你就是新来的转学生吧？我叫小海，是篮球队的。要不要来球场看看？\"\n  background: \"assets/backgrounds/ComfyUI_00035_.png\"\n  next: \"n41_choice\"\n}\n\n@choice(id: \"n41_choice\", title: \"小海邀请你去球场，你要？\", label: \"小海的邀请\") {\n  option(\"去球场\") { next: \"n42_dialog\" }\n  option(\"做作业\") { next: \"n55_dialog\" }\n}\n\n@dialog(id: \"n42_dialog\", character: \"小海\", label: \"接受邀请\") {\n  content: \"太好了！来，我教你投篮！\"\n  background: \"assets/backgrounds/ComfyUI_00037_.png\"\n  next: \"n43_setVariable\"\n}\n\n@setVar(id: \"n43_setVariable\", var: \"小海好感度\", op: \"+=\", value: \"15\", label: \"小海好感+15\") {\n  next: \"n44_setVariable\"\n}\n\n@setVar(id: \"n44_setVariable\", var: \"勇气值\", op: \"+=\", value: \"30\", label: \"勇气+30\") {\n  next: \"n45_setVariable\"\n}\n\n@setVar(id: \"n45_setVariable\", var: \"选择次数\", op: \"+=\", value: \"1\", label: \"选择次数+1\") {\n  next: \"n46_random\"\n}\n\n@random(id: \"n46_random\", label: \"球场随机事件\") {\n  option(\"n47_dialog\", 4)\n  option(\"n49_dialog\", 2)\n  option(\"n51_dialog\", 1)\n}\n\n@dialog(id: \"n47_dialog\", character: \"小海\", label: \"普通比赛\") {\n  content: \"打得不错！下次再一起玩吧！\"\n  background: \"assets/backgrounds/ComfyUI_00037_.png\"\n  next: \"n48_setVariable\"\n}\n\n@setVar(id: \"n48_setVariable\", var: \"运气值\", op: \"+=\", value: \"10\", label: \"运气+10\") {\n  next: \"n58_goto\"\n}\n\n@dialog(id: \"n49_dialog\", character: \"旁白\", label: \"捡到钱包\") {\n  content: \"在球场角落，你发现了一个钱包！里面有200元。\"\n  background: \"assets/backgrounds/ComfyUI_00037_.png\"\n  next: \"n50_setVariable\"\n}\n\n@setVar(id: \"n50_setVariable\", var: \"金钱\", op: \"+=\", value: \"200\", label: \"金钱+200\") {\n  next: \"n58_goto\"\n}\n\n@dialog(id: \"n51_dialog\", character: \"旁白\", label: \"发现密室\") {\n  content: \"球场储物柜后面有一扇暗门！里面是一个被遗忘的社团活动室，墙上挂着往届学生的照片和留言。\"\n  background: \"assets/backgrounds/ComfyUI_ANMIE_00024_.png\"\n  next: \"n52_achievement\"\n}\n\n@achievement(id: \"n52_achievement\", achievementId: \"ach_secret\", label: \"解锁：秘密发现者\") {\n  next: \"n53_setVariable\"\n}\n\n@setVar(id: \"n53_setVariable\", var: \"运气值\", op: \"+=\", value: \"40\", label: \"运气+40\") {\n  next: \"n54_setVariable\"\n}\n\n@setVar(id: \"n54_setVariable\", var: \"剧情进度\", op: \"+=\", value: \"5\", label: \"剧情+5\") {\n  next: \"n58_goto\"\n}\n\n@dialog(id: \"n55_dialog\", character: \"小海\", label: \"婉拒邀请\") {\n  content: \"哦...好吧，学习确实很重要。加油！\"\n  background: \"assets/backgrounds/ComfyUI_00005_.png\"\n  next: \"n56_setVariable\"\n}\n\n@setVar(id: \"n56_setVariable\", var: \"学习进度\", op: \"+=\", value: \"25\", label: \"学习进度+25\") {\n  next: \"n57_setVariable\"\n}\n\n@setVar(id: \"n57_setVariable\", var: \"小海好感度\", op: \"+=\", value: \"3\", label: \"小海好感+3\") {\n  next: \"n58_goto\"\n}\n\n@goto(id: \"n58_goto\", target: \"★ 第四章：学园祭\", label: \"前往第四章\") {\n}\n\n@label(id: \"n59_label\", label: \"★ 第四章：学园祭\", color: \"#E88080\") {\n}\n\n@cg(id: \"n60_cg\", src: \"assets/backgrounds/festival.png\", transition: \"fade\", duration: \"800\", label: \"学园祭CG\") {\n  next: \"n61_dialog\"\n}\n\n@dialog(id: \"n61_dialog\", character: \"旁白\", label: \"学园祭开始\") {\n  content: \"学园祭到了！整个学校张灯结彩，到处都是欢声笑语。小樱在樱花树下等你。\"\n  background: \"assets/backgrounds/festival.png\"\n  next: \"n62_savePoint\"\n}\n\n@savePoint(id: \"n62_savePoint\", slotLabel: \"学园祭前\", label: \"存档：学园祭\") {\n  next: \"n63_dialog\"\n}\n\n@dialog(id: \"n63_dialog\", character: \"小樱\", label: \"樱花树下的约定\") {\n  content: \"你来啦！今天的学园祭很热闹呢。那个...我有话想对你说...\"\n  background: \"assets/backgrounds/ComfyUI_ANMIE_00008_.png\"\n  next: \"n64_choice\"\n}\n\n@choice(id: \"n64_choice\", title: \"小樱似乎有话要说...\", label: \"关键选择\") {\n  option(\"抢先表白\") { next: \"n65_dialog\" }\n  option(\"等待\") { next: \"n69_dialog\" }\n  option(\"岔开话题\") { next: \"n72_dialog\" }\n}\n\n@dialog(id: \"n65_dialog\", character: \"小樱\", label: \"勇敢表白\") {\n  content: \"！（脸红）我也...我也喜欢你！从你转学来的第一天就...\"\n  background: \"assets/backgrounds/ComfyUI_ANMIE_00008_.png\"\n  next: \"n66_setVariable\"\n}\n\n@setVar(id: \"n66_setVariable\", var: \"勇气值\", op: \"+=\", value: \"50\", label: \"勇气+50\") {\n  next: \"n67_setVariable\"\n}\n\n@setVar(id: \"n67_setVariable\", var: \"小樱好感度\", op: \"+=\", value: \"30\", label: \"小樱好感+30\") {\n  next: \"n68_setVariable\"\n}\n\n@setVar(id: \"n68_setVariable\", var: \"剧情进度\", op: \"+=\", value: \"5\", label: \"剧情+5\") {\n  next: \"n76_goto\"\n}\n\n@dialog(id: \"n69_dialog\", character: \"小樱\", label: \"等待小樱\") {\n  content: \"（深呼吸）...其实我一直很感谢你对我的帮助。你是一个很温柔的人。\"\n  background: \"assets/backgrounds/ComfyUI_ANMIE_00008_.png\"\n  next: \"n70_setVariable\"\n}\n\n@setVar(id: \"n70_setVariable\", var: \"勇气值\", op: \"+=\", value: \"15\", label: \"勇气+15\") {\n  next: \"n71_setVariable\"\n}\n\n@setVar(id: \"n71_setVariable\", var: \"小樱好感度\", op: \"+=\", value: \"15\", label: \"小樱好感+15\") {\n  next: \"n76_goto\"\n}\n\n@dialog(id: \"n72_dialog\", character: \"小樱\", label: \"岔开话题\") {\n  content: \"嗯...章鱼烧确实很好吃呢...（眼神有些失落）\"\n  background: \"assets/backgrounds/ComfyUI_ANMIE_00008_.png\"\n  next: \"n73_setVariable\"\n}\n\n@setVar(id: \"n73_setVariable\", var: \"勇气值\", op: \"=\", value: \"0\", label: \"勇气+0\") {\n  next: \"n74_setVariable\"\n}\n\n@setVar(id: \"n74_setVariable\", var: \"小樱好感度\", op: \"+=\", value: \"-5\", label: \"小樱好感-5\") {\n  next: \"n75_setVariable\"\n}\n\n@setVar(id: \"n75_setVariable\", var: \"选择次数\", op: \"+=\", value: \"1\", label: \"选择次数再+1\") {\n  next: \"n76_goto\"\n}\n\n@goto(id: \"n76_goto\", target: \"★ 烟花大会\", label: \"烟花大会\") {\n}\n\n@label(id: \"n77_label\", label: \"★ 烟花大会\", color: \"#D8A030\") {\n}\n\n@audio(id: \"n78_audio\", type: \"bgm\", action: \"play\", src: \"assets/audio/fireworks_bgm.mp3\", loop: \"false\", volume: \"1\", label: \"烟花BGM\") {\n  next: \"n79_cg\"\n}\n\n@cg(id: \"n79_cg\", src: \"assets/backgrounds/fireworks.png\", transition: \"zoom\", duration: \"1000\", label: \"烟花CG\") {\n  next: \"n80_timer\"\n}\n\n@timer(id: \"n80_timer\", mode: \"countdown\", duration: 2000, label: \"烟花倒计时\", variable: \"计时结果\") {\n  next: \"n81_label\"\n}\n\n@label(id: \"n81_label\", label: \"★ 最终章：结局\", color: \"#A088D0\") {\n}\n\n@dialog(id: \"n82_dialog\", character: \"旁白\", label: \"结局开始\") {\n  content: \"烟花在夜空中绽放，照亮了每个人的脸庞。故事即将迎来结局。\"\n  background: \"assets/backgrounds/ComfyUI_00007_.png\"\n  next: \"n83_condition\"\n}\n\n@condition(id: \"n83_condition\", label: \"真结局条件\") {\n  expr: \"小樱好感度 >= 40 && 勇气值 >= 60\"\n  true: \"n84_dialog\"\n  false: \"n88_condition\"\n}\n\n@dialog(id: \"n84_dialog\", character: \"小樱\", label: \"真结局\") {\n  content: \"谢谢你一直以来的陪伴。和你在一起的每一天，都是我珍贵的回忆。从今往后，也请多关照！\"\n  background: \"assets/backgrounds/sakura_end.png\"\n  next: \"n85_steamAchievement\"\n}\n\n@steamAchievement(id: \"n85_steamAchievement\", achievementId: \"ach_true_love\", label: \"Steam真结局成就\") {\n  next: \"n86_achievement\"\n}\n\n@achievement(id: \"n86_achievement\", achievementId: \"ach_true_love\", label: \"解锁真爱成就\") {\n  next: \"n87_end\"\n}\n\n@end(id: \"n87_end\", type: \"true\", label: \"真结局\") {\n  message: \"樱花树下的约定，将永远留在两颗相爱的心中。感谢游玩！\"\n  background: \"assets/backgrounds/sakura_end.png\"\n}\n\n@condition(id: \"n88_condition\", label: \"好结局条件\") {\n  expr: \"小樱好感度 >= 20\"\n  true: \"n89_dialog\"\n  false: \"n91_dialog\"\n}\n\n@dialog(id: \"n89_dialog\", character: \"小樱\", label: \"好结局\") {\n  content: \"这一年过得很开心。虽然有些话没能说出口，但这些回忆我会永远珍藏。\"\n  background: \"assets/backgrounds/sakura_end.png\"\n  next: \"n90_end\"\n}\n\n@end(id: \"n90_end\", type: \"good\", label: \"好结局\") {\n  message: \"虽然没有表白，但友情的羁绊同样珍贵。故事仍将继续...\"\n  background: \"assets/backgrounds/school_end.png\"\n}\n\n@dialog(id: \"n91_dialog\", character: \"旁白\", label: \"普通结局\") {\n  content: \"樱花飘落，春天结束了。你与新朋友们的关系还很浅，但未来还有很长的路要走。\"\n  background: \"assets/backgrounds/school_end.png\"\n  next: \"n92_animation\"\n}\n\n@anim(id: \"n92_animation\", target: \"screen\", action: \"exit\", duration: \"800\", position: \"left\", label: \"樱花飘落\") {\n  next: \"n93_wait\"\n}\n\n@wait(id: \"n93_wait\", duration: \"1000\", label: \"最终等待\") {\n  next: \"n94_end\"\n}\n\n@end(id: \"n94_end\", type: \"normal\", label: \"普通结局\") {\n  message: \"故事平淡地结束了。也许下一次，你会做出不同的选择。\"\n}\n",
+  "assets": [
+    {
+      "name": "ComfyUI_ANMIE_00001_.png",
+      "relativePath": "assets/backgrounds/ComfyUI_ANMIE_00001_.png",
+      "type": "image",
+      "size": 2609470,
+      "thumbnail": "data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAA5CAIAAABPkBkqAAAACXBIWXMAAAsTAAALEwEAmpwYAAAZsHRFWHR3b3JrZmxvdwB7ImlkIjogIjkyMTEyZDk3LWJiNjQtNGI0NC04NmYyLWVhNTY5MWVmOGY2ZSIsICJyZXZpc2lvbiI6IDAsICJsYXN0X25vZGVfaWQiOiAyOCwgImxhc3RfbGlua19pZCI6IDUxLCAibm9kZXMiOiBbeyJpZCI6IDgsICJ0eXBlIjogIlZBRURlY29kZSIsICJwb3MiOiBbMTIwOC45OTkzNjQzMDUxOTMyLCAxODcuOTk5NTg4NjM4MzQ0MjhdLCAic2l6ZSI6IFsyMjUsIDcxLjMyODEyNV0sICJmbGFncyI6IHt9LCAib3JkZXIiOiA4LCAibW9kZSI6IDAsICJpbnB1dHMiOiBbeyJuYW1lIjogInNhbXBsZXMiLCAidHlwZSI6ICJMQVRFTlQiLCAibGluayI6IDUxfSwgeyJuYW1lIjogInZhZSIsICJ0eXBlIjogIlZBRSIsICJsaW5rIjogNDV9XSwgIm91dHB1dHMiOiBbeyJuYW1lIjogIklNQUdFIiwgInR5cGUiOiAiSU1BR0UiLCAic2xvdF9pbmRleCI6IDAsICJsaW5rcyI6IFsxNl19XSwgInByb3BlcnRpZXMiOiB7Ik5vZGUgbmFtZSBmb3IgUyZSIjogIlZBRURlY29kZSIsICJjbnJfaWQiOiAiY29tZnktY29yZSIsICJ2ZXIiOiAiMC4zLjc1In0sICJ3aWRnZXRzX3ZhbHVlcyI6IFtdfSwgeyJpZCI6IDcsICJ0eXBlIjogIkNMSVBUZXh0RW5jb2RlIiwgInBvcyI6IFsyMzAuODg1MDAzNTIyNDcwNywgMzMxLjA1MTY3Nzk2Nzc5MzhdLCAic2l6ZSI6IFs0MjUuMjUsIDE4MC41OTM3NV0sICJmbGFncyI6IHt9LCAib3JkZXIiOiA2LCAibW9kZSI6IDAsICJpbnB1dHMiOiBbeyJuYW1lIjogImNsaXAiLCAidHlwZSI6ICJDTElQIiwgImxpbmsiOiA0NH1dLCAib3V0cHV0cyI6IFt7Im5hbWUiOiAiQ09ORElUSU9OSU5HIiwgInR5cGUiOiAiQ09ORElUSU9OSU5HIiwgInNsb3RfaW5kZXgiOiAwLCAibGlua3MiOiBbNl19XSwgInRpdGxlIjogIkNMSVAgVGV4dCBFbmNvZGUgKE5lZ2F0aXZlIFByb21wdCkiLCAicHJvcGVydGllcyI6IHsiTm9kZSBuYW1lIGZvciBTJlIiOiAiQ0xJUFRleHRFbmNvZGUiLCAiY25yX2lkIjogImNvbWZ5LWNvcmUiLCAidmVyIjogIjAuMy43NSJ9LCAid2lkZ2V0c192YWx1ZXMiOiBbIlx1NGY0ZVx1NmUwNVx1ZmYwY1x1NmEyMVx1N2NjYVx1ZmYwY1x1NTY2YVx1NzBiOVx1ZmYwY1x1NTE5OVx1NWI5ZVx1ZmYwYzNEIFx1NWVmYVx1NmEyMVx1ZmYwY1x1OGQ1Ylx1NzQ5MFx1NzQ5MFx1Nzg2Y1x1OGZiOVx1ZmYwY1x1NGU5NFx1NWI5OFx1NWQyOVx1NTc0Zlx1ZmYwY1x1NjI0Ylx1OTBlOFx1NzU3OFx1NWY2Mlx1ZmYwY1x1NTkxYVx1NGY1OVx1NjI0Ylx1NjMwN1x1ZmYwY1x1ODBhMlx1NGY1M1x1NjI2ZFx1NjZmMlx1ZmYwY1x1OTAwZlx1ODljNlx1OTUxOVx1OGJlZlx1ZmYwY1x1NTkzNFx1NTNkMVx1Njc0Mlx1NGU3MVx1ZmYwY1x1ODg2M1x1NjcwZFx1NTBmNVx1Nzg2Y1x1ZmYwY1x1ODI3Mlx1NWY2OVx1ODEwZlx1NGU3MVx1ZmYwY1x1NWYzYVx1NTE0OVx1NTIzYVx1NzczY1x1ZmYwY1x1OTYzNFx1NWY3MVx1Njc0Mlx1NGU3MVx1ZmYwY1x1NmMzNFx1NTM3MFx1ZmYwY1x1NjU4N1x1NWI1N1x1ZmYwY1x1N2I3ZVx1NTQwZFx1ZmYwY1x1OGZjN1x1NGU4ZVx1OWVkMVx1NjY5N1x1ZmYwY1x1OGZjN1x1NGU4ZVx1ODI3M1x1NGUzZFx1ZmYwY1x1NzNiMFx1NGVlM1x1NTM5YVx1NmQ4Mlx1ZmYwY1x1NmNiOVx1ODE3Ylx1OGQyOFx1NjExZiJdLCAiY29sb3IiOiAiIzMyMiIsICJiZ2NvbG9yIjogIiM1MzMifSwgeyJpZCI6IDMsICJ0eXBlIjogIktTYW1wbGVyIiwgInBvcyI6IFs4MTUuMDkxOTkwODg5MDQ3NiwgMTg4LjI4Mjg0OTAxMDg5MDEyXSwgInNpemUiOiBbMzE1LCAzMTYuNjU2MjVdLCAiZmxhZ3MiOiB7fSwgIm9yZGVyIjogNywgIm1vZGUiOiAwLCAiaW5wdXRzIjogW3sibmFtZSI6ICJtb2RlbCIsICJ0eXBlIjogIk1PREVMIiwgImxpbmsiOiA0N30sIHsibmFtZSI6ICJwb3NpdGl2ZSIsICJ0eXBlIjogIkNPTkRJVElPTklORyIsICJsaW5rIjogNH0sIHsibmFtZSI6ICJuZWdhdGl2ZSIsICJ0eXBlIjogIkNPTkRJVElPTklORyIsICJsaW5rIjogNn0sIHsibmFtZSI6ICJsYXRlbnRfaW1hZ2UiLCAidHlwZSI6ICJMQVRFTlQiLCAibGluayI6IDE3fV0sICJvdXRwdXRzIjogW3sibmFtZSI6ICJMQVRFTlQiLCAidHlwZSI6ICJMQVRFTlQiLCAic2xvdF9pbmRleCI6IDAsICJsaW5rcyI6IFs1MV19XSwgInByb3BlcnRpZXMiOiB7Ik5vZGUgbmFtZSBmb3IgUyZSIjogIktTYW1wbGVyIiwgImNucl9pZCI6ICJjb21meS1jb3JlIiwgInZlciI6ICIwLjMuNzUifSwgIndpZGdldHNfdmFsdWVzIjogWzg0NDU1MDczNTQ0MjMyMiwgInJhbmRvbWl6ZSIsIDksIDEsICJldWxlciIsICJzaW1wbGUiLCAxXX0sIHsiaWQiOiAxMSwgInR5cGUiOiAiTW9kZWxTYW1wbGluZ0F1cmFGbG93IiwgInBvcyI6IFszMzQuMTg0NDAyMDAxOTA0NywgLTE1LjUxNDgwNTQ3MzQ1MDc5Ml0sICJzaXplIjogWzMxNSwgNzkuMzI4MTI1XSwgImZsYWdzIjoge30sICJvcmRlciI6IDQsICJtb2RlIjogNCwgImlucHV0cyI6IFt7Im5hbWUiOiAibW9kZWwiLCAidHlwZSI6ICJNT0RFTCIsICJsaW5rIjogNDJ9XSwgIm91dHB1dHMiOiBbeyJuYW1lIjogIk1PREVMIiwgInR5cGUiOiAiTU9ERUwiLCAic2xvdF9pbmRleCI6IDAsICJsaW5rcyI6IFs0N119XSwgInByb3BlcnRpZXMiOiB7Ik5vZGUgbmFtZSBmb3IgUyZSIjogIk1vZGVsU2FtcGxpbmdBdXJhRmxvdyIsICJjbnJfaWQiOiAiY29tZnktY29yZSIsICJ2ZXIiOiAiMC4zLjc1In0sICJ3aWRnZXRzX3ZhbHVlcyI6IFszXX0sIHsiaWQiOiAxNiwgInR5cGUiOiAiVU5FVExvYWRlciIsICJwb3MiOiBbLTExMi43NDEyODk2MjY1NDc0MywgLTE2LjE3MTU2MzYzMzA2MzAxNl0sICJzaXplIjogWzI3MCwgODJdLCAiZmxhZ3MiOiB7fSwgIm9yZGVyIjogMCwgIm1vZGUiOiAwLCAiaW5wdXRzIjogW10sICJvdXRwdXRzIjogW3sibmFtZSI6ICJNT0RFTCIsICJ0eXBlIjogIk1PREVMIiwgImxpbmtzIjogWzQyXX1dLCAicHJvcGVydGllcyI6IHsiTm9kZSBuYW1lIGZvciBTJlIiOiAiVU5FVExvYWRlciIsICJjbnJfaWQiOiAiY29tZnktY29yZSIsICJ2ZXIiOiAiMC4zLjc1In0sICJ3aWRnZXRzX3ZhbHVlcyI6IFsiel9pbWFnZV90dXJib19iZjE2LnNhZmV0ZW5zb3JzIiwgImRlZmF1bHQiXX0sIHsiaWQiOiAxOCwgInR5cGUiOiAiQ0xJUExvYWRlciIsICJwb3MiOiBbLTExMS4zNTk4MzE1NTM4NjY5NywgMjIyLjQzMDI3MjQ1ODAwNjAyXSwgInNpemUiOiBbMjcwLCAxMTYuNjU2MjVdLCAiZmxhZ3MiOiB7fSwgIm9yZGVyIjogMSwgIm1vZGUiOiAwLCAiaW5wdXRzIjogW10sICJvdXRwdXRzIjogW3sibmFtZSI6ICJDTElQIiwgInR5cGUiOiAiQ0xJUCIsICJsaW5rcyI6IFs0MywgNDRdfV0sICJwcm9wZXJ0aWVzIjogeyJOb2RlIG5hbWUgZm9yIFMmUiI6ICJDTElQTG9hZGVyIiwgImNucl9pZCI6ICJjb21meS1jb3JlIiwgInZlciI6ICIwLjMuNzUifSwgIndpZGdldHNfdmFsdWVzIjogWyJxd2VuXzNfNGIuc2FmZXRlbnNvcnMiLCAibHVtaW5hMiIsICJkZWZhdWx0Il19LCB7ImlkIjogMTcsICJ0eXBlIjogIlZBRUxvYWRlciIsICJwb3MiOiBbODMyLjQ5MjIwODU2NTkxMTEsIDU5NS4zMjkwOTU1MDA4OTI5XSwgInNpemUiOiBbMjcwLCA4Ml0sICJmbGFncyI6IHt9LCAib3JkZXIiOiAyLCAibW9kZSI6IDAsICJpbnB1dHMiOiBbXSwgIm91dHB1dHMiOiBbeyJuYW1lIjogIlZBRSIsICJ0eXBlIjogIlZBRSIsICJsaW5rcyI6IFs0NV19XSwgInByb3BlcnRpZXMiOiB7Ik5vZGUgbmFtZSBmb3IgUyZSIjogIlZBRUxvYWRlciIsICJjbnJfaWQiOiAiY29tZnktY29yZSIsICJ2ZXIiOiAiMC4zLjc1In0sICJ3aWRnZXRzX3ZhbHVlcyI6IFsiYWUuc2FmZXRlbnNvcnMiXX0sIHsiaWQiOiA2LCAidHlwZSI6ICJDTElQVGV4dEVuY29kZSIsICJwb3MiOiBbMjM0LjE2ODEwMzI2NDE1MzA1LCA5OS4zODIwMTAyNjk3NjUyNl0sICJzaXplIjogWzQyMy44MTI1LCAxNzcuMDkzNzVdLCAiZmxhZ3MiOiB7fSwgIm9yZGVyIjogNSwgIm1vZGUiOiAwLCAiaW5wdXRzIjogW3sibmFtZSI6ICJjbGlwIiwgInR5cGUiOiAiQ0xJUCIsICJsaW5rIjogNDN9XSwgIm91dHB1dHMiOiBbeyJuYW1lIjogIkNPTkRJVElPTklORyIsICJ0eXBlIjogIkNPTkRJVElPTklORyIsICJzbG90X2luZGV4IjogMCwgImxpbmtzIjogWzRdfV0sICJ0aXRsZSI6ICJDTElQIFRleHQgRW5jb2RlIChQb3NpdGl2ZSBQcm9tcHQpIiwgInByb3BlcnRpZXMiOiB7Ik5vZGUgbmFtZSBmb3IgUyZSIjogIkNMSVBUZXh0RW5jb2RlIiwgImNucl9pZCI6ICJjb21meS1jb3JlIiwgInZlciI6ICIwLjMuNzUifSwgIndpZGdldHNfdmFsdWVzIjogWyJcdTY2MWZcdTU5MWNcdTliNTRcdTU5NzNcdWZmMGNcdTU3NTBcdTU5ZmZcdWZmMGNcdTYyNThcdTY2MWZcdTcwNmZcdWZmMGNcdTk0ZjZcdTZjYjNcdTcwNzBcdTg0ZGRcdWZmMGNcdTg1ODRcdTdlYjFcdTdmMGVcdTk3NjJcdTc3ZWRcdTg4ZDlcdWZmMGNcdTY2MWZcdTk2ZmVcdTczYWZcdTdlZDVcdWZmMGNcdTg4ZDlcdTY0NDZcdTg0ZWNcdTY3N2VcdTZjMzRcdTUxNDlcdWZmMGNcdTUzZDFcdTRlMWRcdTZlN2ZcdThmNmZcdThkMzRcdTgxMzhcdWZmMGNcdTdhZWZcdTU3NTBcdTY2MWZcdTc3ZjNcdWZmMGNcdTUzY2NcdTgxN2ZcdTVlNzZcdTYyZTJcdTVjNDhcdTgxOWRcdWZmMGNcdTUzY2NcdTYyNGJcdTYyNThcdTY2MWZcdTcwNmZcdWZmMGNcdTc5NWVcdTYwYzVcdTZlMDVcdTUxYjdcdTZlMjlcdTY3ZDRcdWZmMGNcdTliNTRcdTVlN2JcdTY2MWZcdTU5MWNcdWZmMGNcdThmZjdcdTVlN2JcdTUxNDlcdTk2ZmVcdWZmMGNcdTY2MWZcdTgyOTJcdTcwYjlcdTdmMDBcdWZmMGNcdTRmNTNcdTc5ZWZcdTUxNDlcdWZmMGNcdThmNmVcdTVlZDNcdTUxNDlcdWZmMGNcdTUzZDFcdTRlMWRcdTUxNDlcdWZmMGNcdTZjMzRcdTUxNDlcdThkMjhcdTYxMWZcdWZmMGNcdTViYWJcdTVkMGVcdTlhOGZcdTk4Y2VcdTY4M2NcdWZmMGNcdTU0MDlcdTUzNWNcdTUyOWJcdTc1M2JcdTk4Y2VcdWZmMGNcdTYyNGJcdTdlZDhcdTUyYThcdTc1M2JcdThkMjhcdTYxMWZcdWZmMGNcdTY3ZDRcdTU0OGNcdTZjMzRcdTVmNjlcdTUxNDlcdTVmNzFcdWZmMGNcdTZlMjlcdTY2OTZcdTZjYmJcdTYxMDhcdTZjMWJcdTU2ZjRcdWZmMGNcdTdlYzZcdTgxN2JcdTYyNGJcdTdlZDhcdTdlYmZcdTY3NjFcdWZmMGNcdTY4YTZcdTVlN2JcdTdhZTVcdThiZGRcdTZjMWJcdTU2ZjRcdWZmMGNcdTVlNzJcdTUxYzBcdTkwMWFcdTkwMGZcdTgyNzJcdTVmNjlcdWZmMGNcdTc1MzVcdTVmNzFcdTdlYTdcdTY3ODRcdTU2ZmVcdWZmMGM4SyBcdTlhZDhcdTZlMDUiXX0sIHsiaWQiOiA5LCAidHlwZSI6ICJTYXZlSW1hZ2UiLCAicG9zIjogWzE0NTQuNjAwODAxMzQzMzIxOCwgMTg3LjkzNjg4NDM2NDgxMjA0XSwgInNpemUiOiBbNTg0LjUsIDExMjEuMjgxMjVdLCAiZmxhZ3MiOiB7fSwgIm9yZGVyIjogOSwgIm1vZGUiOiAwLCAiaW5wdXRzIjogW3sibmFtZSI6ICJpbWFnZXMiLCAidHlwZSI6ICJJTUFHRSIsICJsaW5rIjogMTZ9XSwgIm91dHB1dHMiOiBbXSwgInByb3BlcnRpZXMiOiB7ImNucl9pZCI6ICJjb21meS1jb3JlIiwgInZlciI6ICIwLjMuNzUiLCAiTm9kZSBuYW1lIGZvciBTJlIiOiAiU2F2ZUltYWdlIn0sICJ3aWRnZXRzX3ZhbHVlcyI6IFsiQ29tZnlVSV9BTk1JRSJdfSwgeyJpZCI6IDEzLCAidHlwZSI6ICJFbXB0eVNEM0xhdGVudEltYWdlIiwgInBvcyI6IFszMzQuMDkxNTgyMjE4ODEwNiwgNTcyLjE4Nzg3MjM5OTc3MTFdLCAic2l6ZSI6IFszMTUsIDE0My4zMjgxMjVdLCAiZmxhZ3MiOiB7fSwgIm9yZGVyIjogMywgIm1vZGUiOiAwLCAiaW5wdXRzIjogW10sICJvdXRwdXRzIjogW3sibmFtZSI6ICJMQVRFTlQiLCAidHlwZSI6ICJMQVRFTlQiLCAic2xvdF9pbmRleCI6IDAsICJsaW5rcyI6IFsxN119XSwgInByb3BlcnRpZXMiOiB7Ik5vZGUgbmFtZSBmb3IgUyZSIjogIkVtcHR5U0QzTGF0ZW50SW1hZ2UiLCAiY25yX2lkIjogImNvbWZ5LWNvcmUiLCAidmVyIjogIjAuMy43NSJ9LCAid2lkZ2V0c192YWx1ZXMiOiBbMTkyMCwgMTA4OCwgNF19XSwgImxpbmtzIjogW1s0LCA2LCAwLCAzLCAxLCAiQ09ORElUSU9OSU5HIl0sIFs2LCA3LCAwLCAzLCAyLCAiQ09ORElUSU9OSU5HIl0sIFsxNiwgOCwgMCwgOSwgMCwgIklNQUdFIl0sIFsxNywgMTMsIDAsIDMsIDMsICJMQVRFTlQiXSwgWzQyLCAxNiwgMCwgMTEsIDAsICJNT0RFTCJdLCBbNDMsIDE4LCAwLCA2LCAwLCAiQ0xJUCJdLCBbNDQsIDE4LCAwLCA3LCAwLCAiQ0xJUCJdLCBbNDUsIDE3LCAwLCA4LCAxLCAiVkFFIl0sIFs0NywgMTEsIDAsIDMsIDAsICJNT0RFTCJdLCBbNTEsIDMsIDAsIDgsIDAsICJMQVRFTlQiXV0sICJncm91cHMiOiBbXSwgImNvbmZpZyI6IHt9LCAiZXh0cmEiOiB7ImRzIjogeyJzY2FsZSI6IDAuODM5MDU0NTI4ODgyNDMxMSwgIm9mZnNldCI6IFsxMjc0LjYxMTA2OTU2NjI5NDIsIDE3Mi42Njc1NDI0NjY3MDI0M119LCAiZnJvbnRlbmRWZXJzaW9uIjogIjEuNDIuMTEiLCAiVkhTX2xhdGVudHByZXZpZXciOiBmYWxzZSwgIlZIU19sYXRlbnRwcmV2aWV3cmF0ZSI6IDAsICJWSFNfTWV0YWRhdGFJbWFnZSI6IHRydWUsICJWSFNfS2VlcEludGVybWVkaWF0ZSI6IHRydWV9LCAidmVyc2lvbiI6IDAuNH3pqGaXAAAL43RFWHRwcm9tcHQAeyIzIjogeyJpbnB1dHMiOiB7InNlZWQiOiA4NDQ1NTA3MzU0NDIzMjIsICJzdGVwcyI6IDksICJjZmciOiAxLjAsICJzYW1wbGVyX25hbWUiOiAiZXVsZXIiLCAic2NoZWR1bGVyIjogInNpbXBsZSIsICJkZW5vaXNlIjogMS4wLCAibW9kZWwiOiBbIjE2IiwgMF0sICJwb3NpdGl2ZSI6IFsiNiIsIDBdLCAibmVnYXRpdmUiOiBbIjciLCAwXSwgImxhdGVudF9pbWFnZSI6IFsiMTMiLCAwXX0sICJjbGFzc190eXBlIjogIktTYW1wbGVyIiwgIl9tZXRhIjogeyJ0aXRsZSI6ICJLXHU5MWM3XHU2ODM3XHU1NjY4In19LCAiNiI6IHsiaW5wdXRzIjogeyJ0ZXh0IjogIlx1NjYxZlx1NTkxY1x1OWI1NFx1NTk3M1x1ZmYwY1x1NTc1MFx1NTlmZlx1ZmYwY1x1NjI1OFx1NjYxZlx1NzA2Zlx1ZmYwY1x1OTRmNlx1NmNiM1x1NzA3MFx1ODRkZFx1ZmYwY1x1ODU4NFx1N2ViMVx1N2YwZVx1OTc2Mlx1NzdlZFx1ODhkOVx1ZmYwY1x1NjYxZlx1OTZmZVx1NzNhZlx1N2VkNVx1ZmYwY1x1ODhkOVx1NjQ0Nlx1ODRlY1x1Njc3ZVx1NmMzNFx1NTE0OVx1ZmYwY1x1NTNkMVx1NGUxZFx1NmU3Zlx1OGY2Zlx1OGQzNFx1ODEzOFx1ZmYwY1x1N2FlZlx1NTc1MFx1NjYxZlx1NzdmM1x1ZmYwY1x1NTNjY1x1ODE3Zlx1NWU3Nlx1NjJlMlx1NWM0OFx1ODE5ZFx1ZmYwY1x1NTNjY1x1NjI0Ylx1NjI1OFx1NjYxZlx1NzA2Zlx1ZmYwY1x1Nzk1ZVx1NjBjNVx1NmUwNVx1NTFiN1x1NmUyOVx1NjdkNFx1ZmYwY1x1OWI1NFx1NWU3Ylx1NjYxZlx1NTkxY1x1ZmYwY1x1OGZmN1x1NWU3Ylx1NTE0OVx1OTZmZVx1ZmYwY1x1NjYxZlx1ODI5Mlx1NzBiOVx1N2YwMFx1ZmYwY1x1NGY1M1x1NzllZlx1NTE0OVx1ZmYwY1x1OGY2ZVx1NWVkM1x1NTE0OVx1ZmYwY1x1NTNkMVx1NGUxZFx1NTE0OVx1ZmYwY1x1NmMzNFx1NTE0OVx1OGQyOFx1NjExZlx1ZmYwY1x1NWJhYlx1NWQwZVx1OWE4Zlx1OThjZVx1NjgzY1x1ZmYwY1x1NTQwOVx1NTM1Y1x1NTI5Ylx1NzUzYlx1OThjZVx1ZmYwY1x1NjI0Ylx1N2VkOFx1NTJhOFx1NzUzYlx1OGQyOFx1NjExZlx1ZmYwY1x1NjdkNFx1NTQ4Y1x1NmMzNFx1NWY2OVx1NTE0OVx1NWY3MVx1ZmYwY1x1NmUyOVx1NjY5Nlx1NmNiYlx1NjEwOFx1NmMxYlx1NTZmNFx1ZmYwY1x1N2VjNlx1ODE3Ylx1NjI0Ylx1N2VkOFx1N2ViZlx1Njc2MVx1ZmYwY1x1NjhhNlx1NWU3Ylx1N2FlNVx1OGJkZFx1NmMxYlx1NTZmNFx1ZmYwY1x1NWU3Mlx1NTFjMFx1OTAxYVx1OTAwZlx1ODI3Mlx1NWY2OVx1ZmYwY1x1NzUzNVx1NWY3MVx1N2VhN1x1Njc4NFx1NTZmZVx1ZmYwYzhLIFx1OWFkOFx1NmUwNSIsICJjbGlwIjogWyIxOCIsIDBdfSwgImNsYXNzX3R5cGUiOiAiQ0xJUFRleHRFbmNvZGUiLCAiX21ldGEiOiB7InRpdGxlIjogIkNMSVAgVGV4dCBFbmNvZGUgKFBvc2l0aXZlIFByb21wdCkifX0sICI3IjogeyJpbnB1dHMiOiB7InRleHQiOiAiXHU0ZjRlXHU2ZTA1XHVmZjBjXHU2YTIxXHU3Y2NhXHVmZjBjXHU1NjZhXHU3MGI5XHVmZjBjXHU1MTk5XHU1YjllXHVmZjBjM0QgXHU1ZWZhXHU2YTIxXHVmZjBjXHU4ZDViXHU3NDkwXHU3NDkwXHU3ODZjXHU4ZmI5XHVmZjBjXHU0ZTk0XHU1Yjk4XHU1ZDI5XHU1NzRmXHVmZjBjXHU2MjRiXHU5MGU4XHU3NTc4XHU1ZjYyXHVmZjBjXHU1OTFhXHU0ZjU5XHU2MjRiXHU2MzA3XHVmZjBjXHU4MGEyXHU0ZjUzXHU2MjZkXHU2NmYyXHVmZjBjXHU5MDBmXHU4OWM2XHU5NTE5XHU4YmVmXHVmZjBjXHU1OTM0XHU1M2QxXHU2NzQyXHU0ZTcxXHVmZjBjXHU4ODYzXHU2NzBkXHU1MGY1XHU3ODZjXHVmZjBjXHU4MjcyXHU1ZjY5XHU4MTBmXHU0ZTcxXHVmZjBjXHU1ZjNhXHU1MTQ5XHU1MjNhXHU3NzNjXHVmZjBjXHU5NjM0XHU1ZjcxXHU2NzQyXHU0ZTcxXHVmZjBjXHU2YzM0XHU1MzcwXHVmZjBjXHU2NTg3XHU1YjU3XHVmZjBjXHU3YjdlXHU1NDBkXHVmZjBjXHU4ZmM3XHU0ZThlXHU5ZWQxXHU2Njk3XHVmZjBjXHU4ZmM3XHU0ZThlXHU4MjczXHU0ZTNkXHVmZjBjXHU3M2IwXHU0ZWUzXHU1MzlhXHU2ZDgyXHVmZjBjXHU2Y2I5XHU4MTdiXHU4ZDI4XHU2MTFmIiwgImNsaXAiOiBbIjE4IiwgMF19LCAiY2xhc3NfdHlwZSI6ICJDTElQVGV4dEVuY29kZSIsICJfbWV0YSI6IHsidGl0bGUiOiAiQ0xJUCBUZXh0IEVuY29kZSAoTmVnYXRpdmUgUHJvbXB0KSJ9fSwgIjgiOiB7ImlucHV0cyI6IHsic2FtcGxlcyI6IFsiMyIsIDBdLCAidmFlIjogWyIxNyIsIDBdfSwgImNsYXNzX3R5cGUiOiAiVkFFRGVjb2RlIiwgIl9tZXRhIjogeyJ0aXRsZSI6ICJWQUVcdTg5ZTNcdTc4MDEifX0sICI5IjogeyJpbnB1dHMiOiB7ImZpbGVuYW1lX3ByZWZpeCI6ICJDb21meVVJX0FOTUlFIiwgImltYWdlcyI6IFsiOCIsIDBdfSwg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",
+      "category": "character"
+    },
+    {
+      "name": "ComfyUI_ANMIE_00031_.png",
+      "relativePath": "assets/backgrounds/ComfyUI_ANMIE_00031_.png",
+      "type": "image",
+      "size": 2220346,
+      "category": "background",
+      "thumbnail": "data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAAA5CAIAAABPkBkqAAAACXBIWXMAAAsTAAALEwEAmpwYAAAY7nRFWHR3b3JrZmxvdwB7ImlkIjogIjkyMTEyZDk3LWJiNjQtNGI0NC04NmYyLWVhNTY5MWVmOGY2ZSIsICJyZXZpc2lvbiI6IDAsICJsYXN0X25vZGVfaWQiOiAyOCwgImxhc3RfbGlua19pZCI6IDUxLCAibm9kZXMiOiBbeyJpZCI6IDgsICJ0eXBlIjogIlZBRURlY29kZSIsICJwb3MiOiBbMTIwOC45OTkzNjQzMDUxOTMyLCAxODcuOTk5NTg4NjM4MzQ0MjhdLCAic2l6ZSI6IFsyMjUsIDcxLjMyODEyNV0sICJmbGFncyI6IHt9LCAib3JkZXIiOiA4LCAibW9kZSI6IDAsICJpbnB1dHMiOiBbeyJuYW1lIjogInNhbXBsZXMiLCAidHlwZSI6ICJMQVRFTlQiLCAibGluayI6IDUxfSwgeyJuYW1lIjogInZhZSIsICJ0eXBlIjogIlZBRSIsICJsaW5rIjogNDV9XSwgIm91dHB1dHMiOiBbeyJuYW1lIjogIklNQUdFIiwgInR5cGUiOiAiSU1BR0UiLCAic2xvdF9pbmRleCI6IDAsICJsaW5rcyI6IFsxNl19XSwgInByb3BlcnRpZXMiOiB7Ik5vZGUgbmFtZSBmb3IgUyZSIjogIlZBRURlY29kZSIsICJjbnJfaWQiOiAiY29tZnktY29yZSIsICJ2ZXIiOiAiMC4zLjc1In0sICJ3aWRnZXRzX3ZhbHVlcyI6IFtdfSwgeyJpZCI6IDcsICJ0eXBlIjogIkNMSVBUZXh0RW5jb2RlIiwgInBvcyI6IFsyMzAuODg1MDAzNTIyNDcwNywgMzMxLjA1MTY3Nzk2Nzc5MzhdLCAic2l6ZSI6IFs0MjUuMjUsIDE4MC41OTM3NV0sICJmbGFncyI6IHt9LCAib3JkZXIiOiA2LCAibW9kZSI6IDAsICJpbnB1dHMiOiBbeyJuYW1lIjogImNsaXAiLCAidHlwZSI6ICJDTElQIiwgImxpbmsiOiA0NH1dLCAib3V0cHV0cyI6IFt7Im5hbWUiOiAiQ09ORElUSU9OSU5HIiwgInR5cGUiOiAiQ09ORElUSU9OSU5HIiwgInNsb3RfaW5kZXgiOiAwLCAibGlua3MiOiBbNl19XSwgInRpdGxlIjogIkNMSVAgVGV4dCBFbmNvZGUgKE5lZ2F0aXZlIFByb21wdCkiLCAicHJvcGVydGllcyI6IHsiTm9kZSBuYW1lIGZvciBTJlIiOiAiQ0xJUFRleHRFbmNvZGUiLCAiY25yX2lkIjogImNvbWZ5LWNvcmUiLCAidmVyIjogIjAuMy43NSJ9LCAid2lkZ2V0c192YWx1ZXMiOiBbIlx1NGY0ZVx1NTIwNlx1OGZhOFx1NzM4N1x1ZmYwY1x1NmEyMVx1N2NjYVx1ZmYwY1x1NTE5OVx1NWI5ZVx1ZmYwY1x1NzcxZlx1NGViYVx1ZmYwYzNEIFx1NWVmYVx1NmEyMVx1OGZjN1x1NWVhNlx1ZmYwY1x1NGU5NFx1NWI5OFx1NWQyOVx1NTc0Zlx1ZmYwY1x1NzczY1x1Nzc1Ylx1NzU3OFx1NWY2Mlx1ZmYwY1x1NjI0Ylx1OTBlOFx1NzU3OFx1NWY2Mlx1ZmYwY1x1NTkxYVx1NjMwN1x1ZmYwY1x1ODBhMlx1NGY1M1x1NjI2ZFx1NjZmMlx1ZmYwY1x1ODg2M1x1NjcwZFx1NTBmNVx1Nzg2Y1x1ZmYwY1x1ODI3Mlx1NWY2OVx1ODEwZlx1NGU3MVx1ZmYwY1x1NTY2YVx1NzBiOVx1ZmYwY1x1NmMzNFx1NTM3MFx1ZmYwY1x1NjU4N1x1NWI1N1x1ZmYwY1x1OGZjN1x1NGU4ZVx1OWVkMVx1NjY5N1x1ZmYwY1x1NmNiOVx1ODE3Ylx1ZmYwY1x1N2ViZlx1Njc2MVx1Njc0Mlx1NGU3MVx1ZmYwY1x1ODBjY1x1NjY2Zlx1NmRmN1x1NGU3MSJdLCAiY29sb3IiOiAiIzMyMiIsICJiZ2NvbG9yIjogIiM1MzMifSwgeyJpZCI6IDMsICJ0eXBlIjogIktTYW1wbGVyIiwgInBvcyI6IFs4MTUuMDkxOTkwODg5MDQ3NiwgMTg4LjI4Mjg0OTAxMDg5MDEyXSwgInNpemUiOiBbMzE1LCAzMTYuNjU2MjVdLCAiZmxhZ3MiOiB7fSwgIm9yZGVyIjogNywgIm1vZGUiOiAwLCAiaW5wdXRzIjogW3sibmFtZSI6ICJtb2RlbCIsICJ0eXBlIjogIk1PREVMIiwgImxpbmsiOiA0N30sIHsibmFtZSI6ICJwb3NpdGl2ZSIsICJ0eXBlIjogIkNPTkRJVElPTklORyIsICJsaW5rIjogNH0sIHsibmFtZSI6ICJuZWdhdGl2ZSIsICJ0eXBlIjogIkNPTkRJVElPTklORyIsICJsaW5rIjogNn0sIHsibmFtZSI6ICJsYXRlbnRfaW1hZ2UiLCAidHlwZSI6ICJMQVRFTlQiLCAibGluayI6IDE3fV0sICJvdXRwdXRzIjogW3sibmFtZSI6ICJMQVRFTlQiLCAidHlwZSI6ICJMQVRFTlQiLCAic2xvdF9pbmRleCI6IDAsICJsaW5rcyI6IFs1MV19XSwgInByb3BlcnRpZXMiOiB7Ik5vZGUgbmFtZSBmb3IgUyZSIjogIktTYW1wbGVyIiwgImNucl9pZCI6ICJjb21meS1jb3JlIiwgInZlciI6ICIwLjMuNzUifSwgIndpZGdldHNfdmFsdWVzIjogWzM1OTQ0NTA2MzY1MzA3LCAicmFuZG9taXplIiwgOSwgMSwgImV1bGVyIiwgInNpbXBsZSIsIDFdfSwgeyJpZCI6IDExLCAidHlwZSI6ICJNb2RlbFNhbXBsaW5nQXVyYUZsb3ciLCAicG9zIjogWzMzNC4xODQ0MDIwMDE5MDQ3LCAtMTUuNTE0ODA1NDczNDUwNzkyXSwgInNpemUiOiBbMzE1LCA3OS4zMjgxMjVdLCAiZmxhZ3MiOiB7fSwgIm9yZGVyIjogNCwgIm1vZGUiOiA0LCAiaW5wdXRzIjogW3sibmFtZSI6ICJtb2RlbCIsICJ0eXBlIjogIk1PREVMIiwgImxpbmsiOiA0Mn1dLCAib3V0cHV0cyI6IFt7Im5hbWUiOiAiTU9ERUwiLCAidHlwZSI6ICJNT0RFTCIsICJzbG90X2luZGV4IjogMCwgImxpbmtzIjogWzQ3XX1dLCAicHJvcGVydGllcyI6IHsiTm9kZSBuYW1lIGZvciBTJlIiOiAiTW9kZWxTYW1wbGluZ0F1cmFGbG93IiwgImNucl9pZCI6ICJjb21meS1jb3JlIiwgInZlciI6ICIwLjMuNzUifSwgIndpZGdldHNfdmFsdWVzIjogWzNdfSwgeyJpZCI6IDE2LCAidHlwZSI6ICJVTkVUTG9hZGVyIiwgInBvcyI6IFstMTEyLjc0MTI4OTYyNjU0NzQzLCAtMTYuMTcxNTYzNjMzMDYzMDE2XSwgInNpemUiOiBbMjcwLCA4Ml0sICJmbGFncyI6IHt9LCAib3JkZXIiOiAwLCAibW9kZSI6IDAsICJpbnB1dHMiOiBbXSwgIm91dHB1dHMiOiBbeyJuYW1lIjogIk1PREVMIiwgInR5cGUiOiAiTU9ERUwiLCAibGlua3MiOiBbNDJdfV0sICJwcm9wZXJ0aWVzIjogeyJOb2RlIG5hbWUgZm9yIFMmUiI6ICJVTkVUTG9hZGVyIiwgImNucl9pZCI6ICJjb21meS1jb3JlIiwgInZlciI6ICIwLjMuNzUifSwgIndpZGdldHNfdmFsdWVzIjogWyJ6X2ltYWdlX3R1cmJvX2JmMTYuc2FmZXRlbnNvcnMiLCAiZGVmYXVsdCJdfSwgeyJpZCI6IDE4LCAidHlwZSI6ICJDTElQTG9hZGVyIiwgInBvcyI6IFstMTExLjM1OTgzMTU1Mzg2Njk3LCAyMjIuNDMwMjcyNDU4MDA2MDJdLCAic2l6ZSI6IFsyNzAsIDExNi42NTYyNV0sICJmbGFncyI6IHt9LCAib3JkZXIiOiAxLCAibW9kZSI6IDAsICJpbnB1dHMiOiBbXSwgIm91dHB1dHMiOiBbeyJuYW1lIjogIkNMSVAiLCAidHlwZSI6ICJDTElQIiwgImxpbmtzIjogWzQzLCA0NF19XSwgInByb3BlcnRpZXMiOiB7Ik5vZGUgbmFtZSBmb3IgUyZSIjogIkNMSVBMb2FkZXIiLCAiY25yX2lkIjogImNvbWZ5LWNvcmUiLCAidmVyIjogIjAuMy43NSJ9LCAid2lkZ2V0c192YWx1ZXMiOiBbInF3ZW5fM180Yi5zYWZldGVuc29ycyIsICJsdW1pbmEyIiwgImRlZmF1bHQiXX0sIHsiaWQiOiAxNywgInR5cGUiOiAiVkFFTG9hZGVyIiwgInBvcyI6IFs4MzIuNDkyMjA4NTY1OTExMSwgNTk1LjMyOTA5NTUwMDg5MjldLCAic2l6ZSI6IFsyNzAsIDgyXSwgImZsYWdzIjoge30sICJvcmRlciI6IDIsICJtb2RlIjogMCwgImlucHV0cyI6IFtdLCAib3V0cHV0cyI6IFt7Im5hbWUiOiAiVkFFIiwgInR5cGUiOiAiVkFFIiwgImxpbmtzIjogWzQ1XX1dLCAicHJvcGVydGllcyI6IHsiTm9kZSBuYW1lIGZvciBTJlIiOiAiVkFFTG9hZGVyIiwgImNucl9pZCI6ICJjb21meS1jb3JlIiwgInZlciI6ICIwLjMuNzUifSwgIndpZGdldHNfdmFsdWVzIjogWyJhZS5zYWZldGVuc29ycyJdfSwgeyJpZCI6IDYsICJ0eXBlIjogIkNMSVBUZXh0RW5jb2RlIiwgInBvcyI6IFsyMzQuMTY4MTAzMjY0MTUzMDUsIDk5LjM4MjAxMDI2OTc2NTI2XSwgInNpemUiOiBbNDIzLjgxMjUsIDE3Ny4wOTM3NV0sICJmbGFncyI6IHt9LCAib3JkZXIiOiA1LCAibW9kZSI6IDAsICJpbnB1dHMiOiBbeyJuYW1lIjogImNsaXAiLCAidHlwZSI6ICJDTElQIiwgImxpbmsiOiA0M31dLCAib3V0cHV0cyI6IFt7Im5hbWUiOiAiQ09ORElUSU9OSU5HIiwgInR5cGUiOiAiQ09ORElUSU9OSU5HIiwgInNsb3RfaW5kZXgiOiAwLCAibGlua3MiOiBbNF19XSwgInRpdGxlIjogIkNMSVAgVGV4dCBFbmNvZGUgKFBvc2l0aXZlIFByb21wdCkiLCAicHJvcGVydGllcyI6IHsiTm9kZSBuYW1lIGZvciBTJlIiOiAiQ0xJUFRleHRFbmNvZGUiLCAiY25yX2lkIjogImNvbWZ5LWNvcmUiLCAidmVyIjogIjAuMy43NSJ9LCAid2lkZ2V0c192YWx1ZXMiOiBbIlx1OGZlYVx1NThlYlx1NWMzY1x1NTJhOFx1NzUzYlx1OThjZVx1NjgzY1x1ZmYwYzNEIFx1NTM2MVx1OTAxYVx1NmUzMlx1NjdkM1x1ZmYwY1x1N2NiZVx1ODFmNFx1NGU5NFx1NWI5OFx1ZmYwY1x1NTkyN1x1NzczY1x1Nzc1Ylx1NzA3NVx1NTJhOFx1NjcwOVx1Nzk1ZVx1ZmYwY1x1N2VjNlx1ODE3Ylx1NzZhZVx1ODBhNFx1OGQyOFx1NjExZlx1ZmYwY1x1NjdkNFx1OTg3YVx1NTNkMVx1NGUxZFx1ZmYwY1x1NjdkNFx1NTQ4Y1x1NTE0OVx1NWY3MVx1ZmYwY1x1NzUzNVx1NWY3MVx1N2VhN1x1NWUwM1x1NTE0OVx1ZmYwY1x1NTUyZlx1N2Y4ZVx1N2FlNVx1OGJkZFx1NmMxYlx1NTZmNFx1ZmYwY1x1OWFkOFx1NmUwNVx1OGQyOFx1NjExZlx1ZmYwY1x1NGU5MVx1OTZmZVx1OWI1NFx1NWU3Ylx1ZmYwY1x1NmU3Zlx1OTAwZlx1NjcyNlx1ODBlN1x1NjExZlx1ZmYwY1x1NmMzNFx1NTE0OVx1OGQyOFx1NjExZlxuXG5cdThmZWFcdTU4ZWJcdTVjM2NcdTUyYThcdTc1M2JcdTk4Y2VcdTY4M2NcdWZmMGNcdTc1MWNcdTdmOGVcdTZlMjlcdTY3ZDRcdTRlOTRcdTViOThcdWZmMGNcdTg1MzdcdTg1ODdcdTdjODlcdTczZTBcdTUxNDlcdTg1ODRcdTdlYjFcdTc3ZWRcdTg4ZDlcdWZmMGNcdTdjODlcdTk2ZmVcdTczYWZcdTdlZDVcdWZmMGNcdTUzZDFcdTk1ZjRcdTUyMmJcdTgyYjFcdTdjMmFcdWZmMGNcdTUzNGFcdThlNzJcdTgyYjFcdTZkNzdcdThmN2JcdTYyOWFcdTgyYjFcdTc0ZTNcdWZmMGNcdTZkNDVcdTdiMTFcdTZlMjlcdTY3ZDRcdWZmMGNcdTY2OTZcdTdjODlcdTk2ZmVcdTUxNDlcdWZmMGNcdTc4OGVcdTUxNDlcdTcwYjlcdTdmMDBcdWZmMGNcdTRmNTNcdTc5ZWZcdTUxNDlcdWZmMGNcdThmNmVcdTVlZDNcdTUxNDlcdWZmMGNcdTZjMzRcdTUxNDlcdThkMjhcdTYxMWZcdWZmMGM4SyJdfSwgeyJpZCI6IDksICJ0eXBlIjogIlNhdmVJbWFnZSIsICJwb3MiOiBbMTcxNS40NjU5MTM3MjIwMDg3LCAxMjUuOTU2ODk3OTY2ODEzODFdLCAic2l6ZSI6IFsyOTU0LjI4MTI1LCAxNjM5LjM0Mzc1XSwgImZsYWdzIjoge30sICJvcmRlciI6IDksICJtb2RlIjogMCwgImlucHV0cyI6IFt7Im5hbWUiOiAiaW1hZ2VzIiwgInR5cGUiOiAiSU1BR0UiLCAibGluayI6IDE2fV0sICJvdXRwdXRzIjogW10sICJwcm9wZXJ0aWVzIjogeyJjbnJfaWQiOiAiY29tZnktY29yZSIsICJ2ZXIiOiAiMC4zLjc1IiwgIk5vZGUgbmFtZSBmb3IgUyZSIjogIlNhdmVJbWFnZSJ9LCAid2lkZ2V0c192YWx1ZXMiOiBbIkNvbWZ5VUlfQU5NSUUiXX0sIHsiaWQiOiAxMywgInR5cGUiOiAiRW1wdHlTRDNMYXRlbnRJbWFnZSIsICJwb3MiOiBbMzM0LjA5MTU4MjIxODgxMDYsIDU3Mi4xODc4NzIzOTk3NzExXSwgInNpemUiOiBbMzE1LCAxNDMuMzI4MTI1XSwgImZsYWdzIjoge30sICJvcmRlciI6IDMsICJtb2RlIjogMCwgImlucHV0cyI6IFtdLCAib3V0cHV0cyI6IFt7Im5hbWUiOiAiTEFURU5UIiwgInR5cGUiOiAiTEFURU5UIiwgInNsb3RfaW5kZXgiOiAwLCAibGlua3MiOiBbMTddfV0sICJwcm9wZXJ0aWVzIjogeyJOb2RlIG5hbWUgZm9yIFMmUiI6ICJFbXB0eVNEM0xhdGVudEltYWdlIiwgImNucl9pZCI6ICJjb21meS1jb3JlIiwgInZlciI6ICIwLjMuNzUifSwgIndpZGdldHNfdmFsdWVzIjogWzE5MjAsIDEwODgsIDFdfV0sICJsaW5rcyI6IFtbNCwgNiwgMCwgMywgMSwgIkNPTkRJVElPTklORyJdLCBbNiwgNywgMCwgMywgMiwgIkNPTkRJVElPTklORyJdLCBbMTYsIDgsIDAsIDksIDAsICJJTUFHRSJdLCBbMTcsIDEzLCAwLCAzLCAzLCAiTEFURU5UIl0sIFs0MiwgMTYsIDAsIDExLCAwLCAiTU9ERUwiXSwgWzQzLCAxOCwgMCwgNiwgMCwgIkNMSVAiXSwgWzQ0LCAxOCwgMCwgNywgMCwgIkNMSVAiXSwgWzQ1LCAxNywgMCwgOCwgMSwgIlZBRSJdLCBbNDcsIDExLCAwLCAzLCAwLCAiTU9ERUwiXSwgWzUxLCAzLCAwLCA4LCAwLCAiTEFURU5UIl1dLCAiZ3JvdXBzIjogW10sICJjb25maWciOiB7fSwgImV4dHJhIjogeyJkcyI6IHsic2NhbGUiOiAxLjQ2NDEwMDAwMDAwMDAwMDYsICJvZmZzZXQiOiBbMTk4LjU0ODc1NjQ5ODc5NTQ4LCAyNDkuNTM0ODc2ODI4NjE5NTNdfSwgImZyb250ZW5kVmVyc2lvbiI6ICIxLjQyLjExIiwgIlZIU19sYXRlbnRwcmV2aWV3IjogZmFsc2UsICJWSFNfbGF0ZW50cHJldmlld3JhdGUiOiAwLCAiVkhTX01ldGFkYXRhSW1hZ2UiOiB0cnVlLCAiVkhTX0tlZXBJbnRlcm1lZGlhdGUiOiB0cnVlfSwgInZlcnNpb24iOiAwLjR9xDTIeQAACxx0RVh0cHJvbXB0AHsiMyI6IHsiaW5wdXRzIjogeyJzZWVkIjogMzU5NDQ1MDYzNjUzMDcsICJzdGVwcyI6IDksICJjZmciOiAxLjAsICJzYW1wbGVyX25hbWUiOiAiZXVsZXIiLCAic2NoZWR1bGVyIjogInNpbXBsZSIsICJkZW5vaXNlIjogMS4wLCAibW9kZWwiOiBbIjE2IiwgMF0sICJwb3NpdGl2ZSI6IFsiNiIsIDBdLCAibmVnYXRpdmUiOiBbIjciLCAwXSwgImxhdGVudF9pbWFnZSI6IFsiMTMiLCAwXX0sICJjbGFzc190eXBlIjogIktTYW1wbGVyIiwgIl9tZXRhIjogeyJ0aXRsZSI6ICJLXHU5MWM3XHU2ODM3XHU1NjY4In19LCAiNiI6IHsiaW5wdXRzIjogeyJ0ZXh0IjogIlx1OGZlYVx1NThlYlx1NWMzY1x1NTJhOFx1NzUzYlx1OThjZVx1NjgzY1x1ZmYwYzNEIFx1NTM2MVx1OTAxYVx1NmUzMlx1NjdkM1x1ZmYwY1x1N2NiZVx1ODFmNFx1NGU5NFx1NWI5OFx1ZmYwY1x1NTkyN1x1NzczY1x1Nzc1Ylx1NzA3NVx1NTJhOFx1NjcwOVx1Nzk1ZVx1ZmYwY1x1N2VjNlx1ODE3Ylx1NzZhZVx1ODBhNFx1OGQyOFx1NjExZlx1ZmYwY1x1NjdkNFx1OTg3YVx1NTNkMVx1NGUxZFx1ZmYwY1x1NjdkNFx1NTQ4Y1x1NTE0OVx1NWY3MVx1ZmYwY1x1NzUzNVx1NWY3MVx1N2VhN1x1NWUwM1x1NTE0OVx1ZmYwY1x1NTUyZlx1N2Y4ZVx1N2FlNVx1OGJkZFx1NmMxYlx1NTZmNFx1ZmYwY1x1OWFkOFx1NmUwNVx1OGQyOFx1NjExZlx1ZmYwY1x1NGU5MVx1OTZmZVx1OWI1NFx1NWU3Ylx1ZmYwY1x1NmU3Zlx1OTAwZlx1NjcyNlx1ODBlN1x1NjExZlx1ZmYwY1x1NmMzNFx1NTE0OVx1OGQyOFx1NjExZlxuXG5cdThmZWFcdTU4ZWJcdTVjM2NcdTUyYThcdTc1M2JcdTk4Y2VcdTY4M2NcdWZmMGNcdTc1MWNcdTdmOGVcdTZlMjlcdTY3ZDRcdTRlOTRcdTViOThcdWZmMGNcdTg1MzdcdTg1ODdcdTdjODlcdTczZTBcdTUxNDlcdTg1ODRcdTdlYjFcdTc3ZWRcdTg4ZDlcdWZmMGNcdTdjODlcdTk2ZmVcdTczYWZcdTdlZDVcdWZmMGNcdTUzZDFcdTk1ZjRcdTUyMmJcdTgyYjFcdTdjMmFcdWZmMGNcdTUzNGFcdThlNzJcdTgyYjFcdTZkNzdcdThmN2JcdTYyOWFcdTgyYjFcdTc0ZTNcdWZmMGNcdTZkNDVcdTdiMTFcdTZlMjlcdTY3ZDRcdWZmMGNcdTY2OTZcdTdjODlcdTk2ZmVcdTUxNDlcdWZmMGNcdTc4OGVcdTUxNDlcdTcwYjlcdTdmMDBcdWZmMGNcdTRmNTNcdTc5ZWZcdTUxNDlcdWZmMGNcdThmNmVcdTVlZDNcdTUxNDlcdWZmMGNcdTZjMzRcdTUxNDlcdThkMjhcdTYxMWZcdWZmMGM4SyIsICJjbGlwIjogWyIxOCIsIDBdfSwgImNsYXNzX3R5cGUiOiAiQ0xJUFRleHRFbmNvZGUiLCAiX21ldGEiOiB7InRpdGxlIjogIkNMSVAgVGV4dCBFbmNvZGUgKFBvc2l0aXZlIFByb21wdCkifX0sICI3IjogeyJpbnB1dHMiOiB7InRleHQiOiAiXHU0ZjRlXHU1MjA2XHU4ZmE4XHU3Mzg3XHVmZjBjXHU2YTIxXHU3Y2NhXHVmZjBjXHU1MTk5XHU1YjllXHVmZjBjXHU3NzFmXHU0ZWJhXHVmZjBjM0QgXHU1ZWZhXHU2YTIxXHU4ZmM3XHU1ZWE2XHVmZjBjXHU0ZTk0XHU1Yjk4XHU1ZDI5XHU1NzRmXHVmZjBjXHU3NzNjXHU3NzViXHU3NTc4XHU1ZjYyXHVmZjBjXHU2MjRiXHU5MGU4XHU3NTc4XHU1ZjYyXHVmZjBjXHU1OTFhXHU2MzA3XHVmZjBjXHU4MGEyXHU0ZjUzXHU2MjZkXHU2NmYyXHVmZjBjXHU4ODYzXHU2NzBkXHU1MGY1XHU3ODZjXHVmZjBjXHU4MjcyXHU1ZjY5XHU4MTBmXHU0ZTcxXHVmZjBjXHU1NjZhXHU3MGI5XHVmZjBjXHU2YzM0XHU1MzcwXHVmZjBjXHU2NTg3XHU1YjU3XHVmZjBjXHU4ZmM3XHU0ZThlXHU5ZWQxXHU2Njk3XHVmZjBjXHU2Y2I5XHU4MTdiXHVmZjBjXHU3ZWJmXHU2NzYxXHU2NzQyXHU0ZTcxXHVmZjBjXHU4MGNjXHU2NjZmXHU2ZGY3XHU0ZTcxIiwgImNsaXAiOiBbIjE4IiwgMF19LCAiY2xhc3NfdHlwZSI6ICJDTElQVGV4dEVuY29kZSIsICJfbWV0YSI6IHsidGl0bGUiOiAiQ0xJUCBUZXh0IEVuY29kZSAoTmVnYXRpdmUgUHJvbXB0KSJ9fSwgIjgiOiB7ImlucHV0cyI6IHsic2FtcGxlcyI6IFsiMyIsIDBdLCAidmFlIjogWyIxNyIsIDBdfSwgImNsYXNzX3R5cGUiOiAiVkFFRGVjb2RlIiwgIl9tZXRhIjogeyJ0aXRsZSI6ICJWQUVcdTg5ZTNcdTc4MDEifX0sICI5IjogeyJpbnB1dHMiOiB7ImZpbGVuYW1lX3ByZWZpeCI6ICJDb21meVVJX0FOTUlFIiwgImltYWdlcyI6IFsiOCIsIDBdfSwgImNsYXNzX3R5cGUiOiAiU2F2ZUltYWdlIiwgIl9tZXRhIjogeyJ0aXRsZSI6ICJcdTRmZGRcdTViNThcdTU2ZmVcdTUwY2YifX0sICIxMyI6IHsiaW5wdXRzIjogeyJ3aWR0aCI6IDE5MjAsICJoZWlnaHQiOiAxMDg4LCAiYmF0Y2hfc2l6ZSI6IDF9LCAiY2xhc3NfdHlwZSI6ICJFbXB0eVNEM0xhdGVudEltYWdlIiwgIl9tZXRhIjogeyJ0aXRsZSI6ICJcdTdhN2FMYXRlbnRcdTU2ZmVcdTUwY2ZcdWZmMDhTRDNcdWZmMDkifX0sICIxNiI6IHsiaW5wdXRzIjogeyJ1bmV0X25hbWUiOiAiel9pbWFnZV90dXJib19iZjE2LnNhZmV0ZW5zb3JzIiwgIndlaWdodF9kdHlwZSI6ICJkZWZhdWx0In0sICJjbGFzc190eXBlIjogIlVORVRMb2FkZXIiLCAiX21ldGEiOiB7InRpdGxlIjogIlVOZXRcdTUyYTBcdThmN2RcdTU2NjgifX0sICIxNyI6IHsiaW5wdXRzIjogeyJ2YWVfbmFtZSI6ICJhZS5zYWZldGVuc29ycyJ9LCAiY2xhc3NfdHlwZSI6ICJWQUVMb2FkZXIiLCAiX21ldGEiOiB7InRpdGxlIjogIlx1NTJhMFx1OGY3ZFZBRSJ9fSwgIjE4IjogeyJpbnB1dHMiOiB7ImNsaXBfbmFtZSI6ICJxd2VuXzNfNGIuc2FmZXRlbnNvcnMiLCAidHlwZSI6ICJsdW1pbmEyIiwgImRldmljZSI6ICJkZWZhdWx0In0sICJjbGFzc190eXBlIjogIkNMSVBMb2FkZXIiLCAiX21ldGEiOiB7InRpdGxlIjogIlx1NTJhMFx1OGY3ZENMSVAifX1993eckgAAIABJREFUeJxFuIdT1Pe+/89f8Lv3e+89NyfdxCTGxMTYjYlRYzeW2GLvDRRFBKXXbewusCxte++99957byy7dGwIWFHB5JzffNBz7sxj3vOez+wwzGOez9fntVvwejj1aij5aij1ajD1ciD1aiD5EiDxMp+YySdmBhLz9zhALv6yL/kyk5zpS8xkYjOZ8Ewy9DIReRGNzsSiL2LRF9HI83DoWSj4LBh65g888fqfegNPPYEnLu8Tp/sxgGva6Zq2u6ZsjimrY9ryjscW5xOTe1rrmNLagVNjm1RaHylMEzLDA4n+rkgzLlCN8ZQjHPkgSzrAkObpkjxdPAAgGaRLB2nSAYo0SxLGsRwvmmxEdiuhbRIQUtjUwmuAcushnDowqxbEqm1m1oJFDQgTuMffRkn1cPvxogG8OIsVxtBsbyvVBidZ4AQLnGhFkOwIigNJdbRSna00VxvV2Uazt1IKXg2kXuVTL3NJgP75M5d8mU2+7EvME3+Zjb+7Z5IzAImZTHQmHZ5JhWcSkZlYdCYafRGLvIhGnoXDzwBZoWeB4FN/4Kkv8FbWY7f3seutLPeUwzVld05a7ZMW+yOT9YHGeFehHRLJR8Xqab3jsR4wNaWxPQJkmR9K9fcl2rsi9RhfNcpVDHPkg0xpniHJ0cR5umSALh2ky4boshG6fIgu7SeL4liOG03SI7oU0DYxCMFvhHEbIJwGCLsOzKwFMWuambXNnDqIshnlgBMiaGYaw8/iBIlubqCdZkcQLQi8BYGzIUiO1nea3l5sSIoDSXEAsvrfqonPZOL/Z2de0Iu+2ItM9EUmAtjpi80HKgk8SYdfJkMzcSBTL6LzZyTyPBx+Ggo+DYWeBYNP/cF5U/6nHv9Td+Cxy/PY6XrsdE873YApi2PK5nyoNWZZfF8vyYbq9faQ/D1kS1v3uFg7rbU/UlsnlJYJmfGBVH9PrB0Xqkf5qhGuYogtG2BKc3RpjirO0URDdNkwXTnEUAwzFEN0WY4sjmG4LjRRi0DLIG2iZgS/EcoFTEGYNSBGNZheBWbUgBi1IGEDwgTF+NupETQzgmYFUHQngmSB481wnAWOt7eS3O1AmhytNDtgimpBkK0Iiq2VUvAym5zJvDUVmz8BZgBNsRfpCEAm8hw4o8DHgOeRmVRkJhl68VZWLPI8GnkWCT8LhZ4G3xbwbazemXryTpZ72uGedrimbM4phzPL5Upra9vPnK3ef/DO74crDp1CXCzB36jkVUMmtY7HauuUwvxIYQZkSbTjQs0ITzn8TpYsT5f2U0U5mmiQLh1+Z0o+SJdlyaIYhu3sIGjgaCm4FZDVNC+rFsyqAdGrwbQq4GRUgxSN7W44IdJBj3Yywx1MXxvVgSBa4DgTDGdqIdqQFFcbzd1Gc7TSbEiaFUExw0kmONmMIBfMAHZi88RfZhMvs4mZTBxQkwrPxIMz8dCLROhFMvQiHX6RAcS9eFvAZPBtB19Eo88j79r3NBR6GpjPlM8PxModeOIKPnH55keVe9runLK7Hvs8OT6Te/M69Mix2sPH6o9fvHP0YvHBs6e3H76w83Dp/hNGLJ2BZKJvQgJdlEmZYX5gqUd5qmGuYpANDKwcTZKjivqp4jxdOkCXDQLIB2nSf8tSw1ESMFLUDOc1QTn1YKCD1WBqFWieZlYNRAtCB1opiW52oocV7mB4WwFZZjjeCCUYYAQLHBhYrlaaA0mzISkWBMUIyAIomO9XHCDzrxPIVPhFIvgsEngaAngeCb1IhJ+nw0DE0mHAXSI8E4/NxKJArMLzmkLBZyEgU0/emvL4n7oCT13+x04PECi7c8rmfBoPTrt1FlAd6PCh0+vX716xfPuy5Zu/X7Z56cpdqzcc3Ljn+Nb9N/64uH/35R2bjtz4o9DexXgkNY6LAFkjXNUQVz74LlnifqqonyYGhhdNMkCT5CjiDFEQ6WU7UAR1C0oCQgibW3hNEE49iFULpleDKFXN5OpmclUTvQakaEK54MRwBz2CZgTaaC4E2QrHm2AEAxSvh+INMIIVTrYjqQ4k1Y6kWhEUC5xkhpONcGLBi9S/IgMMo3kX6fDzZOhZJPAk4JkOOB8HXE8DvhfR8EwSeP3NJCIvEtGZWGwmFgM6GHk3qgBZweAz37/nuv+JK/DE6Z92eKftzkmb40nE+zofSNM7q/dt3/TNwmWffrDkkw+/+fTT775YvHTRD0u/WLzy8y+3L1v7+4bfDmw5tGvTwU3r921dsxl99fYoTzXGV49w5n2x5QMMWZ4mAfJFEwPDiyrKUcRZojCO4wW6GNZ2nHJelqC5hdsEYdeDmPOyyFXNxOomUnUTpbqZVQtRNKHMMKwdjrfBCZYWghGGN8Lwb2UZgXCR7QhgwLvb6O42urOVZkdQLEAN4+EX8fCLWAggGnweDTyPBp6FAo/97im/bcpnm/bZp/2uZ6HQTDz6Mh57OR8oIFOR8PyiEHoWBKbV/MAKAgPLOy/L/U7WY4d3yu6ectheRM3jWib4+O5fvvxk05LFW5Yt/3XFul/XbNm4due6VdtWL9+47MvFP3z4/i/fLNn3y85fVm/duG7n1vX7Nn6/pqfw1l2u5p0sjmKQKR9kyAfosgG6LE+T5WnSPEWSJgkjWI63k2Zq7ZVD24AONkM5jWBWHYhZA6ZXgynVzaSqZmJV0zzNtBowtx4hbe5QQXq0kF4dFKuD4nQQAAOUYGkhAbLa6O52hqed4WpnONvodiS14Fko8CwYeBr0P/a7p/3OaZ9j2uuY9NgeuS2PXJZJt2XSY53yOZ+GgvPvvrevv8jzCNA+wE4w9CwQeAr8heDTwLyst77eTndAlm/K7hoTM7ydjY1Hd5zfsKri4O7zW7fuW7tu09JVq77+YckX3y5e+N1Xny76+uPPF7/33uqFXx7dsm/jul0rl65b/vUPO9Ztu7TzcAjHHuYq8kxpniXLA3sWYGpemTxPk+eo0jRREO5le9AUI7JHCm0TNsOBWDUAHWTMDyxSdTOxspFY2YSvaCRUNpKqmum1EG4jUtrcIQd1ysHdCnCPCoJRQTFqKFY/30RHK83VznC1AaYcbTQLklLwNOB9HHBPeR2PPNZHLvNDh/Gh3fDApntg0z6w6yccxkcu85TX8TQYBKL0L4A59TZKweCzQBAw/raGwfDTty9ET2B+wPufuoJ3FXJZRfHlDSsvblolqi/puXah+Lcd277/buUXXy5f9P0P36z5/uuVK1dsW75i5+f/+/efv1myb/32jas3b970x0+rty/9YvGB9Tt8NN1jczLHkvfTxcDqQJ/3xZAPMOR5uqyfKkkThREMx40m6xBdEjBS0AybjxWEUfOug4QqwBG+ohFb0YCraCRUNVNrIewGhKC5XQjuEELQIghaDO2SQLuksG5lC1YHJ5gQZAuSYmmlmJFkI5KsRxALpv0uwJTT9tBuemDT3TWrxs2KcRPAXYvqoU0/4TBNehxPAn5gh5oHGFJAjgKApsB8Ad+NLYBnofBT33y43ACTFocV1lSy9af9K74FHf8dfubwnQPbj/68atuypRuXrfh5ybIfv1n684qNv67bvefHX1d/8tHG73/Yuvrndd+t/mn5hs2/HNiweuu6hYs9ENZfNP80TtNHl/RRRH0UcR9V3EeV9FMlOaokSxEnCYIwluNCk7XwThEYwWuEcerBb6cVBWhfI6GyCVfRgL3TgLndgJmXRa6FMBrg3OY2PhjFh7ylQwDtFMK6JPAeORyjQuA0CLwagVchcCoETgHHFky6HRMO6wOb/p5ZPWZUjOilIzrpiE4yopeOGRX3LZoHNv2ky/HY73sa8D8NBN7hDwBbQvCdoKfh8DuA9T301Bd66g0+8QSeeoIDXB761OHfl351YeO6C5t+OrTyu/2rlpzY+OPBn9ftWb781Krle9f8tGXl+svb9tBKyomXL1365aeN3/+w9psf1n674qelP21evXn1wq/ZB67eLWp7Wkcb62LHycIEkZ8g8RMkQYosSJGECRI/guf5e5k2YG9Ai0EIbiOMVQeZlwUmVzXhKxvxlUCmMPNgKxoJ1SAKIAvBbW7jNbfzQCg+GM2DdvJgnYKWLiG8W4TokSB6JcheKRIjQfSK4T0ieE/BfavhrlkzblKM6mVDGvGgSjygEg+qREMa8YheNm5S3bfqJuy2abdn2uOdZ/7i9T72+Z8AmZqXFQk/AYoZeuoHeOIDavjY7X/i9Pm7O65tXHNwxbdnN/y4+7tFv361YNf3i3YvX3Jk5XcNW3+6suGnTUu+P79+Pa2o0AVDhju6lKXFV35eu+arRWu++mbt19//8v3q5Z992bTx98zFpslC2CSCFSYLwnhOmMAFIPLCBG4Ix/Zhmc4uqhGFkbegBCA4pwHKnO8gtRpEmpeFAwoIgKloxFQ2EWrAtHoYswnJAbXxwCgeBM2FdnJhnTxYF7+lSzQvS4TofXfCewTwbh6sq2DMIB/RSec1ifIKQV7Oz8sEeZlgQCka0khGDfK7Js0Di2XCap+wOR69xe6ctLumXJ7HvgAgKBh6Mq/piS/4xB964gcy9QTYsHxPHW5x9a3DPyw6v/HHwyuXbP36s21fL9y+eOGlVd/ift+E2Lt5y+JFl9etZF046QM39Pd2jhJwA91oadHZ/UuXrPz887ULv/xx0ZLln331y1df0fbuGzxV9ZhgDVOEfhzTj2f78CwfnuXFMd0Yur2HbOrEa1q7JdA2fhOc0wAki14LvASJgKwGXOW/TFU04qpAhBootb6F1YzkQlACGFrYAgSKD+t6GyshvFuM7BUje0VIwJQQ3sOHzcsaVAkHlIK8QpCT8XNSXv+/kQnyCtGQSjqiVo5pteN6wz2D6b7J8sBkeWC2PrI6phzux24fUDdvYJ4gIAtoH7A0PHZ6H9mccSoBtH/7+Q1rr237ec93X+xY/PnvS764vubb1u1r2/ZsPL78m6Zt63RXT0Sb70Rb6vTV5dqqO4a6an9zDfbI7l8WfrZmwac/Lvxq2Wdf7Fixhnz+gvdI8QOKNUDgBHBsH57jw7MBU1iGA0O1dpMMKIwSiRZDkYCsehizFkKvAb2TVdWIr2z6P1nVIFItlNYA54DbhC2dUniPFNEjgfeI4UD1xIheMRIjQWLESMy8rF5hSw8f1sOFdhbkpNx+2VtB3CwALyPh9om5WTEvJxENSCUDMumgTDasUIxqtOM6432D+YHJ8tBif2RzTTnd027ftNv/+C2ewLTbP+3yTzs903b3A7fdzyEwq2/ATx08ufb73d8uPLL0qyvLF15d9XXtrysat6zq2ftLovpiHlY2imqINd4k/rGj4/etiH3bwPt29fyx5/qPy1Z/8vHazxasWbho2eeLDq1aFyxtyTKUfjwrSOAGCBw/nu3Fs904ph1DNfeQdCiMAt4hgiD5TS3sOiizFkqrAZOrmwn/nlmV72Rhq0GkOii9EcEFo8TwHimyV4bslbRixPNIWjHSeUStGCGiVwjHCFsw/JZeDrSrICvm9Ym5GQBORsTtE3H7hLw+AS8j5GeEguw7hAMS6YhCNarR3tUb7xstD822CavzkR3wNeX0TLm80y4fgNM77XA/sjkmbM6ZwcSoW6VA1Fz6ZcXvS77c/+3Cq8sX4vf9GLh+cKzq2KPm849gVydQZQ8779zrqBprvT0MKh5ruJKrOBcsPa26ehp3YOv+b75cteCTtZ99tvqLxSu/WVt5usZF4odJ3BCRFyLyAgSuj8B24xiArG6Crr1XDkcJIQheE4xVB2UAyQJTakDE6mZcZePbGvYCA6sRW9VMrIPSGuEccLsI3g2oacNK2rBiQNB8rOatiZAYARIjhGNE8N55Wd0FaT479X9w0nxums9L8bgpHifJ46S4nCSXk+bzcmLJkEwxqtYAsgyWBybrQ4tjwuJ6ZHNP2l2T81MMwOacsDgemGwPTfanCS/lduHJNT8cXLb40Hdf/rrg/bbNP/iL9qK3rezcuc51ftdjaOHjjvKprsr7HZWDsNJc9SXuoa2lPy4r/XkF4cA2W/GZ66u/W/Hxx2vnh9em5b/s3VvM6xTGqIIQkRcm8YMkno/AduEYtl6yqQunbe+RtaAE87LY9ZB3sqpBhOomfFUTIKuysbeiqaeisbeyCV8NJje0MEFtAlinGNkrbcdK2rHiNoyoDSNuwwK0YoRIDB/ew4f3CFoAWVxYd0Gcw4xzmAkOK8nlpHicNI+b4nITHHacw4qzmXE2K8Fhp3jcftFbWUCy7hkt942WBybbA7P9ocU5YXFNWB0PrY6HFsdDs/2BwXZPZ7mnteRFYkzxhZIdG86sXvrHt5/v+Ox9xv6fmreuQpdcubJtw76vFoRLj7zqqpjuqrrbVjnWUqa9dHjz55+uWfgFtOh68b693JMHW3dv/uXjD05+89X2RYs3fb9m78ZDZDgjTOaHSLwQGZDlJXAAWRiyuQtIlhLRKYIi+c0twICvB1YHWg2YVNNMqP63LMAXprIJWw0m1MFozUgOpEOI6Ja2YeUovLKDoEATFR0EeQdBgsKJWjECZC8f0cuH9woQGAGityDGYsTZrDibneTy0nxBms9PcrlxFjvKZEQY9CiDHmezUnx+v0gyKFOOqoCxdU9vvmuw3DNY7htt/8L+7pw3Na4xj6kMI3KNp7un7dTRI0u/gq766vqSBZrzO5OY5kEDf+/iLxb879+Jhzb+g1D/pLv+fnv1eEu5uOjU+oWfffyf/9lZeMVCZPiqKiknj+/8cmHv+h9ga7/b8Plnpzdu0yIwATIvQOL5SVwfieMhMJ14ug1DtvQQ9WiMGtklhbULwAhuE4zb2MJpbGE1wOj1UHINGF/djK8GYatA2EowQDUYVwelNiO5MLSkDatCE7XdFEMvTd/L0PfQdT00dSdF3kEUt+NFbVjhvxJXEGMyEhx2ksudNyVM8QRxDifKZIRolCCVEqbTYkxmksvrE0ryEvmwUjOq0Y9rTXd15nksAFrgck9rvqs1j2vM4xrjmMo4qtQNSlX3VHpWWcn2Lz9ib/yu7PvPA82Fr9W4MRW7++ie4rXfO2qL/qJDXhAgj7rA4y3V8U5459mjFRtWCWvrLBDkIBrLu3Dpt6+/xu38lbD9l+UfvXd283YXjhEg8/xkro/E9RLZbgLTiaPbsRRLD8nYidO09cjgKBGkVQBC8EFIAbhVAG5nNSEYzQD4GjCuGoKrhOKqYNgaCLYeRmlG8uGdChRe10M14VkWItdK4llJPDORY8Qytd00JZosQxNlQNxISjSpABhMfEFGIOoTiDN8UZLDizJZIRotQCEHqOQQlRKh0+McbkYg7pfIBxSqIbV2RKMHUOv+hf4dKoBRpW5EqRtWaAel6iGxAnXm2MaFHzT9tKRp1eIUsvSfTs5zJemJmHifipqREucUhFkR7im56xGu8wGh9wGNONrbOYxCD8HaclCU9tKFc6vXYg8furRy6Tfvv7d91XpGY1uIxvOQOF4yx0tme4gsF57hwNJsGLKpi6BD9SqQaGkLap4OOaJTDEPJIB39BKGhHUuohRDroLgaKLYWgq2D4hpaKM2tvJYuZQfRgGFYiBw7ReCkiZw0sZ0isJJ4Jhxb38vU9TC0vXRdD0PTTSvIiiT9Ylm/SJYVStN8UZzNjTCYYRo9SH2bLHqMxU5w+BmBOCuW5eWqQYV6UKEakKsH5cA5IFfNX1QDMoBBhXpIoRmUqwckykGZJklj1uzbvn3RJ9u++uTOisVjoCt/ibvn+N1vVJQ/tcw5DWPOwJmT0Z4TMJN47GMy9jGuc7INOV7b2FdyO3arCr9768XVaw/8sGzpB+8t/eiDH5esqjp/201ke6gcL53ro3O9VI6HzHITgTJae8mGTry6vUfZ2qVs7VK19yrauu299Gcs0xuyTg3roTe3Uhrh+AYYrr4F1wAnNiFokHYuvFveQdRjGFYSz0ETuRgSN0PqokscNJGNLLAR+VYCz0LgmfFcI5ZVkJcqc1JFv1iWEUqSXEGMxYkwWGE6M8pkx1jcJFeQ5ov7hNKsWJaTKgdkqrxMmZMochJ5TiKftyzvF8lzIkVOrMiLFXmJIi9R5sWKnFA+KFWbEfAbW9fvXPzZtq8+PfD1gqI1ix93Vv6JvP2qvfpVT9Mso3WW1/6yo2aitnSwoXIEVjNcWzJ462rq0oX0pYuyEyeW/v1/1i78atnHHy/76IOlH32w+tsf9m47QWpE+6gcL43rY/B8DJ6XwfNSOW4Sy4GnW3rJ+k68tgOr6cDoOvH6Tvx0IPZPXzZPEItaurgwNAPURmlGkJoRJBCSAmljwjp48B4ZiqTrZViIXAdN6GZKXEyJiyFx0cUOmthGEdopQjtZaCMLLURewYBMmZcq+8XyvnlZcTYvxuLG2bwkT5QRSLNieU6qzEtVOQnwsbxU1S9RZEWyjECS4UsyfPE8kgxP3CeQZoXy/nmyQnlWIM/xpcxb1ws3rdv17RdbF332+7df/PTR38hHtv4TXPSk4tzD2yeett96TWl41HSpv+Jspvl2rLI4cvVQvPCPyNlDwXPHD3/79aL//e91C79c8fFHyz76cPknHy1fsOCXlRsKT5ZzwGg/ne+j8Xx0wJePznWT2Q4C04ajWTBkUy/ZjKFYcHQniT2gMcR5Sl0nWd6OFyF6uLAuFhTNhKIYUBQLhua2dAuRWAWapMcyrWS+ky7ysKQ+ttzLlrtZMqCP1HlZFKGdKrKSBAXDat2gSpeXafrFirRAkuKJUjxhWiDplyjzcnVeockBaVLnpKqsWJEVyzIi2duPJXnCJFeUAhCnOOIUV5zmSTM8aR9PmuFKs3x5nMpsObr/5Jql2xct2Lb4yz3ffLHji4+3fvaB7NiWmaqTDxrOT3WUT8PKhsuuxIsu+C9fCdwqjlVeil09Gjx/oGjF9wv+8z9WfvzhDx9++P0H7y/78IOVn378w8cfrfjs832bD1Sfv8UBtQcYQi+N76MLvDS+m8J1UzjASea4yVw3meeh8j1UgQ3HNmEZRgxd3UWWoXAiJLCU8+E9PGAb6BW2YqUooqabZiJyHHSRhy3zcRV+njLAV/u4KjdL5mJIHHSRgyZyUEV2irBgVG8e0ZqG1PoBmWZehzwrlvdLVYMq3ZBaP6Q2DCi1ebkmJ1X1ieWAJr44wRMnOKI4RxhnvyPBESXY4iQHsJbmSjJcSZYrs6G7WaWlxHNFd7bt3PPNov3ff7Pn68+3fvbhr5/+vXPH6od1Z1733p6EXc0XH41fOhy9eSZWUxS5dUZ38rc/Fi/8+D/+v8/+339+8T//tfi995Z88MEPH3yw6pOPViz49IdPPlm3+LvCA2eQRbdVHbgQR+pnigIscYgtCXOlEa48wpXNPxQHWBI/U+ymCx0krgnLVHdT5Gi8BIWTovCSdpykDbjIOoiqbqoBx7JSBG6WzM9ThQSaoEAbFOiCfJ2fp/ZyVD6OysdWetkKF1NWMGa2jhosozrzkMowoNAOKHSDSv2QxjCsN48YzMN686DWOKDU9kvVaZE8yRcnuMIYWxBlCiJMXoTBjzD4UTo/yuBHGYI4QxBnCpNscYojGddofZ1IOwj5T//Uy4GJazu2bf7kwx2ff7xj4UdbFnyw4n//69zShYbzu6bAl+7Vn++7czpedjpQeMh04re237avWbDg2/fe3/7Vt7u++e77999f+N//tfSjD1d8+P66zz9bvuDzlZ8u2LJ0FezKTWJFY5AjiQoUMaEyIdYkpdqkXJeQaqICZYSviApVIa7cQxfZSTwjlqHupii7SMrOebrIii6ysoui6qHpcCwLie+kS3wcZUioCwv1EaExIjJFRMaI0BieJyQwBgXGAF9fMGq1jVisIybriMEyAgiyjBoto2briMU+YrWPWmxDBsuAytAvU6eFsiRfHOeKYixhhCkI0/khKjdC5UZovAiVH6EBvmIsQYItzgmlr7jdr9pqJxH1I3iSmoRJY9sFhZdLfl2/a+En69//n58+em/Fe/+97H//39XlXyoO/hI7tzN0YqvlwHrRgc3kw/ubtm2B/bpJffGMu7pSXt10+McNX/7tv5d9+MHaTz5a+/nClQs+X/3Zwmu7D+DKau1kdkZpSCsMfWpTVmvuU5uSMn1cok3J9QmZLipQ+dlSJ0VgxrP1GIYewzBgmQYsy4BlG3EsM45jw3OdZKGbKfNzVSGBLiIyxCSmmMQcl1piUktUAhARmyMic1hkjgjNBWM2+6jVPmy2Dpstw2bLiNU2ZneMOVxjDveo3TlicwybbANqY79UkxLKE3xJjCuOskVhhiBE4weo3CCVG6DxAjRukMYN0flRpiDGlY0wmTONhQ9vnrl78/xk/S3ayWOyE/snG8ruIxoCTbW1O7eu+ft/rfnwbz9/9LfiJQvqln0p/W1d7OgG68ENisNbyXu34rZtMJ47HKopj0EheQwlguP/tmzVor/9z6qPP/rx00/XLPhs9aefHVy1FnW5xEZg5nS2rNaS19vzenu/zppRmfvU5ozKlJQbomJtkKvwMiUOitBG5tnIfBtFYKcKnFRhnC4dZqnus3XDTE2Go4sJjYAjmSUptybktoTcFpdaY/PK3oqLSaxRsblgxGIftTrumh3jJvuIxTb61pTTM+b0jDpcwxbHsNE2oDb1S3VpsSIpkMW54ihHHGYKgwx+gM4N0Lh+OkCAzgszhRGWKAYMe8n92mtDl/b1FR1PXTp8v74sBmtKtoIGb1/Ol1+539pStG710r/9R8OPS3g7f2RuX8/Ytt5/bIP32GbNoc28Pb/qju+NVl1PQxtScFgYAsp1E7jltYvfe2/pB++v+eijHz9ZsG7B5zu/XQo/d9VLF+b0tpzOljc48yZ33uDK6Wz9OlufxpJWmRIywFeIr/Jx5V627C0elizGlD/kqF/zja/Yxkdk9TBDnxVbUgp7WuVMq11plSutdKUUzoTM9g65NSEDKLhn8YyZ7Q/khnsq84h58jRtAAAcaklEQVTNMWp3jDqco07XqN05anMOm+1DBmtebeyT6dJiVUIoi/NkMY4kwhaHWaIgUxBkAISYwjBLFGEDHmMccYQrTRHJuWtHEie3BU/tcv3xa7LwyGDNrUxVabDkfL6qmHDs4I4F7wsPbFEc+lV9aJd0/1bbHxtCJ7aaj242H9sdvXWxH1qVhTekYI0xUF2wvjrd2nbq5/Vf/fd/r/no09UfffLTgoXbvvoWeb44Ltbm9P8yZfbkTZ68wZ3Tu/r1zqzO3qe1p1WWuMwYlegjYm1ErA0LtRGhdligfcyQTfVwRttZfe2cLFmZldjSynlTOg+A1p1RuwFlSifwXOlMq1wphaPgqSmcV2pcXbg+vnzUBgiab59rxOIcNjuGTPZBvXVEYxlVmQdlhqxYkxQq4zx5nCePcaURtuQtUbYkypHEONIYVxrnySIsUVyoNkEg0t/Xuw//Ej2zPXx2h+fUVve539wXfvcXHvGUXe/9fbv2xG7jyZ2W47vtp/Z6z+wIntoWOPdb4trRgeZbA8j6fkRjAlwbrivz3bmRbK5j3yhd9D9/W/7BRz9+vGDdp59vWfh13aHTfQpTTu/IGVx5k2fA5B4weQeMvrzBmzd4cgZvv97Tr3Vl1M60yp5S2lJKS0JhyijMEyrrY546h6b6YFhfFzPJ12dUjpTKkda4UjpP2uBJ672AMo07rXZlVO6MytOn9qRVroJxvTUhFKtR7SmxbMTiGLLYgeqZ7EPzDOhtw1rrM4Prtdb5QmaflljHJaY+sTYpUseFqjhfGecrY1z5v4nzZAm+PMKWJAUKHar7yqb1V1Z/271tJW/fz+6TW1xHNtqPb7Kd2h4pu5yDNrmLz5hO7Fbv+9V2Yk/i6v5k4f504f7x5qsPOpuHWhuz8IZYY0WwqtRx7ay75GIUCq3cfWTtxwvXffz5z59+sWXh19e37U1K9ED1jM4BkztvdOeNgKwBky8/T87s6zd5s3pPVufOat19GldabU+rbMNq+6jC0sdVunrJdiwtLjNldd4+rSejmY+V3pMxeDN6b1o770vlSqvcKaUzqXAUDBhMfSp1TCAaNdgfWv0PLb5Ri2vY7Bwy2PN6y5DO8tDgeKl3PKFJH2AED3CiCZZmXGbpkxlTEm1SrEmI1AnhW1T/QhnjA8p8ZFbzkT/2LFl05LtFh5Z8aTz/m+/AOvuetc6TWz2Fh5N1t/NwsOPCEeHmNZJdG+NX9+dK/sjfPPKcBnlGaxtFgdPQ+khDhevmJc3J3xzXTgVqyyKw3pItf6z64NMNn3/926Lvr2/ZE2DJcnrnfLLceaMnb/QCmH05kzdn8b0F8GX0Zg2erM6T1bgzGmdG4+wDEmf3syUuOi8uN2d03nc50noyem+fwZfV+/q0nrQakPXWVEJuLxgyWvMaw5DWPGXw/yXxvSEpX8ucM2rXC3v4ockzorY80tmeqPR5HCPaTorD8fku1rjEnFNaM3LTPMa0VJ+WGtISfVqqT0n0KbEuJdYlRJo4Xylugp1Zu/LE91+d+f5r2rHtoTPbzLvWOI9sdl/aF7l5tg9c3w9p1O39VbV/l/3sb+nC30fBRXMq3BNS6zAKnALXhmvLVedPyc8ctZUUeSqrRjv5/OKWnz/5csui7w9+t6p279GEUJvVArMpq3f26905gydn8uat/gGbP2f25MzeHJAvb7/J1zevrF/v7dd5s1pvn9ad0brjcnNEpI3LzQmlLSrRxaTGlNqZ0XkywNjypNSutNKZkjuScltcZo3LbAV5g/mu0v6nc2TWHH9Sjpq40fq0gfoazH2D5P7liL3wp0YUpkGxMkQgW1DoIBrfR+ANSkw5la1f7ehXO7JKW1Zp61Na+xSWPsX8KX+LOS0xhlkyUuntE8uXHFm8sPfglti1/abff9b/9pP29M5g8ZHIncI8ApJorAlXVcZKLyeLjz1mI2flhIleZB4JSoKqPaU3dKdKnFfrg7da0rWYQRC9HyE8vXrr70tWnlm5vv1UUVpmymjtebNnzB2eiGYeJ/ofx/oexzJT4dSoI9Rv9AJNNHuzpn8B+PL1A6VzpzWupMoWkxojIl2AJ3MxuRGxJql0pFWunNo9qvJMqnzPtOGnhugzc2xI6QqLTAVp4HuM8qHCN0Uz5srRiZL20OXGRDFs4GrLw7reWZ55xOjsUxojHKEDT4qxBDmRLq+w5DSOvNaZ17lyGke/ypFV2QHeilPMI7f0ycxpiSnOVeGLSw5+82XT9vXx0iPWY78adq5JVFxI1pwLXT8WrynJIaBjPV1T4KYpWO2siT7D7BpHt2ShDbGGO6YL10znqj03WnzXoeHy9mQ94X6HEnem8uSKn0E7DvFuN99zR6eTuVcDo3MDYy8zA0+jqalgbDIQfxSMP/LHckZPRu/K6OYBLu4+nadPB/Qxo3Gl1M6E0haTmoN8pZvB97JFUakxpbBNqXyvpP45nvtPvv9PUegvrnuWZx+W2Pvl9gI/qyst5g1pDNHmNtXZG7qbzabiZsfFKvPBy+7t5x93Cp7q/XmlOSlRJ4TKrMLUr7Jllfas2tGvmUc9bwpwZO2TW7PAODP3SQEyEmNapO+TmGIsad3v+y6vXhq5fcp5drvx9/WeP7YN1V8JXzsUvXUuUVPaj4AMtsAmie1zOsoUpnUQAUqBagJlN43HroZuImJVGM8NeLAUGa/GDML44SYW9VpFli4YFev/ejD95sHk7PjDl/nR59nB59nBZ30DT9K5J5ncs77BqXj2fjj9MJqZCGceBFP3fYms1pVWO9IaZ0ptTyhtcbklKjEGeQofWxwSqCMiw4jQNEfRvOlRviGZX3frnsBEY8Ud+VLUNNvwD2e6wE/qvkugzQil9zDd0vPnpNduKUvqlOcrJbvPGQ8WRu60DuCFSb44JpSnZYY+hblPZuqTm7JyS1ZhBU4gQaY+qTEjMWQk+rRYmxapkyJVSqRKCVVpkTrBV6SFqvaLF4vWLgtXX/Ze2GU9utWw48fAkZ2RokPhG8eiZReTtbf6YKDhHvQUEXUX3ZKFNMTq7jgvXLEdvZoqg6cqO93FMP/N1nBZR7KOnIcI7wttf4b7/rKn5oIDc+mxuaH7c+OP3tyfBLg7MTd6f2743tzI/VcDo8+Sueep/LNk/nG0bzqUzhvcKeDftvZLrX0Sc1JkjIoMQa7CxxQGWJIxkfGVxPkaTntR3T1RhckXo1LX0I6TdY5T1TkIaZipKghTuEE0wd8I7Sf3qqB3YCf29Jw6JbxQIzp+x17ZmuTKI0Kxi0oOc/l9ck1UJHSzqD4WOyFUpCW6tESblmhTIlVSpEwIFQmhPC6QxfjSGFcSm99Og3RujCPOSRSdp4+iDuxLIupChXscx7db9m2w7PjZfWBb+OKecPGxaNmleHVpsrmuHw7NI6ApUF341k3vkQvu40Xus2XOCzXOK42uYqj3BjJY3p2op0aauINtiqle/QuOb1abnnUPzsXuzmUfzA08nMs/mMuOv04Ovk7kXsb7H7lDDxz+h+7ghDfy0BMe0rtyIsNdjmacoc5T1UmaKspV+9kSO5HmJtKe6zz/9OXmKIqpMnj8Msh/q8dbSXLWUOwNNAsY78AwCpwYQpTGj9EEfjJNiYCALh8oObiOcrPMDieYG3rs9d0ZpjTG5ofZ7JSEF+ZTXVSCl8GI8iTv7PBlMZ40ypVGge+MwNfGKEsYZQjCDF6Uybf3EKwd6DChS1lZZmtFh9HtyZI/PCe3Ow9uNu9a792xPl1aFLp+PFj0R7T0QqziRryhMtlcF625nbxwNXb0kvPQRduRIvOJUsPp2+bztfYisLMY4bzZYS/DxJq4o+3KSYrrmSj2Sp2ZNebmfKNzsftzfRNz/Q/e9N+dzYy8TuSfh1OP/bFJb2TSG572hsd1jmGGbIIsGkQzfEicqxPvJjKcFJYFS7RgCHG6cEyoGWrDRYruOAurjaUgxR2EHky2oRi2HrIDTytAlxUhb5yj190xdnR4sATc7WJKTbkYBnETyUEcPYbA5Xs4GRLww3ycz49zRYMqQ1asjAA/0QDfBKMsYYghCDH4QTo3SOMEaawglRWYJ0hlBelsH4nqI1IjTF6IwY2xBQOQW9HT231Hd1i2/xQ5sudZJPRQLw9e3u8vPBy6fjZcdjVceTN98+bQiUvxQ2c9By/o956V7zmjOHxVeuia5lSF7kKjrrDFXNrluYbsqyaMt/Cn8MYX/PCMMvNK2zdrHZgL3ptLTsz1PZzrvzebHHjhjz/xRB67Q1MO/6TV88jozJMEg72sMJKgg8GVrfVKdL2mq03f1aPrxLiwlAmJ5l5Hb6a0NFNVZi69DDu2F3T6qBAMtWKJVgypgA+H4CpLbp7c2Fy034zu5DXVmbo7zT2d1h6sB0P1owiRNpK3E59kMJ+pTY+94T9T6dlQAtj7+ZIQneujML0UhpdC91JobjLZTaJ4yBQ3keomUT0kmodI8xLpPjLDT2GEqMwglZXG947fOhE7/Kt+/fJ8TflfQdecUT8Oa/Cd2OE7f8B7+Xio5OrjXuLDO82Dd1CZRloKyrNeg3J3ndaer5WfquQdLpEcv225AgvX0RNgXrqeNlBLvAdhPsEZZvjBV7LYrC416xyYi9yb65ucy0/OZu8+Dyan7b6HOtuoSD0m0YWxdDu829yCVsORylawoq1e0dYsR7bIW9sCeMqESJHo6BpqRz5j4OMdENDZ/XdO7qU31Bq6evSd3QUVVdeQjRVdtaW3zm3GVV6VwaDWXoyhq8PQiTZ2d+jawQYUTIEE23vQs37XG7VxVuecM1r+NJn/dPseqYx+EtVJIDoIeAcBbyfiHQSCE09y4cgOHNGOm7/jAXceIiVAovSJxQ9jkdch273qYtfBA+lrpfeqGybqwdOQ9uz1EtfJY7ZTZ0Il4LFO+X2i9R7N19+pGaN4Brq05nO1/WD2KMFuvdWlvgBy3uz2l3alm1jDWOsgxjLYKh1ppD5qF71guV7L4rOq+KwxNecdnEvcn8tOzeUmX2fGXwQzD/WOMbFW34oSNDWJwCA5HK7t6NChO1XtCEkLSIpoUaM6dR1dyjaUHoX0YlqNKBC9/ia69AK3uV7TgVK3txdAq64WXb/QWHWT31xHq7wuR8DNPThdZ5euE67vbNCiG1SomigTl5NJZwYzMzz2PUTvVDf1SUv7UzD8n3LzsFxr6OxyYfEeLMGJxbkwpDCOF8ELvFiGBdNrxfY68Dg7pjdAoz3we95M3P1r+v7cUHxGKxwFgSLXyvtKa+82Ix+2Y+8isYMw7BBaNNylukcwT3HD06LEBDtwj2DJo5TxRmakAvuI7p2W5Qe7jBmkPNmm9Jf1hG915NokgzjrKM46CuFMwNjPKaaXkvCsOjFnSM45++Yio3Op+3OZe3P991+lR575U3YcidvQwGloEMORyvYuFQotb20RghtEUJAMiZQjWxWtbWpUq7IDJG1tUqGgxo4WNRyma2/VopAFni4Mvwmma0I9ZxgmCMIhPGeAwI12E/VIqBwOUSLahM3gESrnHzrTm5BvSsAOwFriHeQ0pCdf1vAax55gSrzo3jCGkCbSQhiCuwcX7GVFMEIfIKvHgu00d6OiAu6zvsRfD8fnJu7OjSTmHPzHPU3JsqveokLHuQuRkisT7Q2DjXdSt0v6GpH9MHwG1DOI4k4wPZNs32iPJgPl5tGa/hbhI5prSjM8KctlYfwkQtyPMQeqiN5rLf0tvEGC9R7FexchfNTCfkHSvRQGZjXJOWN6zpGdiwzPxoZeh3OzyaHXiYEXsdy41eegsLmILhaikwWBcZtrOU01nOZ6HqRZCAUbWtoirTg/oscJ77S0dY4IZWkiK9bDCnXRC17KUy85ntedij/Jpr+4tn9QNX+RlbMU1SMcP9NN0rUgaPUNgkaQsQE8SEQnCTVdhYe1tSBfXYe36PZYVd0/cJTBLoKnuzeKwXu6usydrQY03NzV5sChbTi0pbcjZ9TMjg2+Gc7Pjg7O3R2ajRtfS3H3WyoCl08aD+5S7dk0RUO+5mMedLbkQPWx6jvxWlCiAZUG9dwj6Caoln6UpL9V2o8UDbVKJumuKWHyiWpopFuXamKkWqUjRIe3tNN7DdbfKhzAmu5TXPeQoslW7gxJ94rvAXyZM7OO/jn/wOtw/rknMWUJPHHFnnri99RWflsvvglEa67hNFfR6yolTSArtN3TjMo0dA/V4nKVmCEIIwDHOjp6om04C4xmhQsKXkkyr+meh+XY57XE6dK2iSvgZ6WtbyCUP3tlf3Et90kiLqgFA0PiEB2iTjgDVHrnj1VdZw+467t9d1ABKNzb22Zqbde1thtR7To0XIMGqzqaVN2NJhzISWy763P+eW/kVTr2ui8+Nz48N94/qyJOIiuT5UXey6f1+7b5i468keOeEOFjyOa+5sZoQ3WwuixcXR+rA412s4e7xUkoLYeSZRGCoVbBJM3+kOl5KsmM4c3JOlIfUpzr0Q/1GE0XGkK32nLtkgGM8SHFfQ/Bn0IJZ8j6V1znrDI8a0rO2bNzvvyMKzltD9/TOZNkXgBHY0Gb2ZAaTU+zuruJXV8VBnWNgCi5292Zko7A5RbfOUj2DiYKwsjqQPpmBKO8nlHRWtCPkI+3KkPnW/qvtocPVwf2VHq33kjtuDpbT5nl2t+ofNaWbnQDGAOB9zQjqNCmjhsHekuL+LXXDI0VprJqXSdYhYYoEQhlR4uyG6bohMjaG9UdED8eeIG+8HufeRxP7ObZ/tTc/fG5bGSGBBm4fSlYdMZ97ohm7ybX+b2vCM0PYbf7a29Ha24H628H6yocNwsVx3b7ystSLcQkhJiBMfpgnOEOySOa9R7Z9kSYHCdaQ7e7+lu4SYRglGCN1FONZyqTtZh+lGSE7Jigee7CuZOd0mck/Uu29bUiAPhyZOc8uVfubJYljeEYBjSKDb0tRtRoexpkHTXSupq+us7ENaTzAtRehDQUItSnG51XEDEw3QEnGRBYbmUj41Z1gaMYabsMlx+q1J9u9lzvihR1ug/VObZem7yMeINT/in3PcRLNRBUb0V9961qOayU21Qja6eL2u8oMCWy1mIN9raBANKg4AoURNMJVaOhKlSjFd2WwYviXbwxseaF2zETCbwZH54bGXiTjE5iwdHLh30XDztO7dXt36Tc+/O9pqKR6iuxkkv+sqveqhu+mjJfdbnx2iXT9RJXLdpd3Z6CUlNg6jhG/pBmvccOPGL5x3BG1w1EH4iehHGy7bLBTo35SrPzSmM/lJ5tFz8QJB+SbGMwxkSP/DFZ/4pnm1UFZ43xWVtq1p1/5czleWo2qJwDvcMBVfLAt1jNJbq6muxtuP1sveYCSHsNqSqES87UKgqbDY0EZXM3u6aBcuuW5k5NgbO8R/z7DfrWC/RdRcLDt9Unal3H60MHK0J7SkaKkE/bZX9yI6NstKbrALvumgxcQiwtZ9Q0ipC3JahrOlyNhQw29kK1HTBDG9QCh9k7WrwYuKcLqofUyurLDdCGB3rlm5GBN3dHZvuSb3LpJ2q+/+xvztO/WU/sMB3aLNv5o+v0zszN475Lf7ivnnLevOgsL3JXXPdXl/urKoKN7ZbKDkNpS7AJN0E13GPY7/FjE+zAGNZgvQZNNZJTMFYKzhvq1gaqsabz1ZHy1hycmetUTEr7x7tUY3DWBFb9mGp8JXDMasKvdeFZW3rWmZ2xpYMMNhd6m1hTwq2v1EPgrqa28LVG7aHromO3xOdrRBdqBefLRaV3GHduY2+VYMuuY0sKjeXlBQaIQlLcRdhVSNh5hbK7iPJbkeiPSt3xeuWBO4ZTkBRMMYRx2VFgG3W9nXiAXX2TWFpGKS/lg0vFiGJjZ/2k2jMTHr/r8Bkx9fKWO/ruCnNvhRZSoWy+IW26Jm0oHrPp/nFvBKhhIjyXTfwZ9AyhGiwnNllPbjMf3aLbv1G260fL8S32M7ss5/bZCo/arp91lF5yll91lV93lV/3VjQYbkFCEMJAt2AAqxjA6x+x/aMYnekqJFaLy8DYKTg3i5KlYFzz5UZ3UXOmCd8HYwwSzI8kfSNI7ng79wFeO00zvhS5XuujLzX+l8bYM0N4Uu0SwivxldccEHQeJUlC+NZrCN7u87TfjpFPXCRduEq9epVTdZNcUUQoK2JU3aBXXGPfLCwQ1bKk9QJeKY5+EUY6UoHdfZm49xL90A3G4VLRebAbLLLCeZSaOl7LSW3HcfKdm5iSq7jSa8zaEiHsurSlzIHvzKq1ObNBjq9gtl2SEC+qCddEdWVKULmupSzOI88OZV/GAq889rl0bDYemjVq/wx4sy13TMc2Wk5uN/yxWb1vvXjnGvXhDYZT241nd5svH7ZePWm9cc5actF247Kl6Lzy9En01h2CU1csJbXKK+X9aOEYRqu/CgpWdvfBOZk2YapVlG0T22/A7YVNwVstQ62sJIQ2zg4+EqWHkZwxtPA+XjtF179Q+p8rPM/UwfsyiwkNoTaep9QWm8EwZ3O7phIiL6nlnLqEO3QYenhnzYntzZeOoCpuom/fwJdf5jZc5TUVYkrPFoCPF3ZdrCJeAxELQeTLoN7DV1s37mhdtwG1bitlz0XdjQ57E1vcCOJBaq3YjqyW7CBhYyLhgEETYBItuFZFZy0Xck1TV+KHw4RdxXLKRSP1hqSxUg1t1reDR03K1/HAE5vhpdcxl03NWYxzes2bcGDOZkrVFBmPbjQd36I/tEm552f+9lWyAz/rT27Tn/nNdOGA+fJRS+EJc9EZU+F508WzPVt+IR78Q3u1kn/iiq0cPNqrMhTDPOWoPji7HyXOdqkybWLPnU5zYaP7BjjThB1EceMw1ijFdhevH2njjnSKxzDyaY7luco3IbUPCwz8lhJq42ly9RVWTQmrpgx7q5B06xK7/Bq++FT50ZUn9352/vDaO4XFPVCQhQEXQouZdec4dYUF144cqjl3vu7cqUu71l/dsQm6+2DHjoPdO08QD1zjnKqVXYHrbnSYGnAumsmC4eaU6ufJ4enwwFQwN+FOjhkcNlK3obHcUleqgpZJOkvktCIj5aa1o8FPRNgIcDsJPqhmP7bqgNUhn55VKWbtljmXfU6vmRPxU/XFhqMb9Uc3aw5ukOxZx9q6Uvj7Ou2JLbrTuwzn9xkuHjZcPmq4dEJ/4aTk6AH09u2MExf5Z4vt5bChTrG1tN1zuyMDo+dQogGMbgCjDzWSDYVN7hKov6xlFM33VrQ5C2uGkIxBJGsQxR1EC8bJ+he60LhIl6QIolQapeEcr+4Ot6aSVAHvLL2FvnGKeuca9tb58lMrTu39+6k9n984sY+Jqht2Mk0dTR5M210Jt6Cx6FZLWV3llcsHt397ePO3TYcPEU8Uss9XCC43iK82Sa82iYsb1C1kG8Vk6WDEmLqMLNDP0d/lKiY09ke26Lja7MV3iNtvctuvuavLEifO+bprggywA1NmJDXYaFAzvm5QxX6TT88mQi/1yjmXbc5mnpWJ52SSNypFurpIf2Sj7vAm1e+/CHetpfz6A2/PWs2xzZqTO3Rnf9edO6g7/4fm7BHNmaPdWzfeWba0+eefxBdKcm18VzUmVIvNtDBSMJqvssNT1ZmE0U3FUOcNqPdWS7oZm4JSTJeq4hVtOSh5oJ09iOLluqR3efb7ImOaypO0lFHqz4vq6xTNCA/OiSuvQRX/QS4/T7h1EXJpW+mxRSVHFtWe2466cU5Qd4dfUS5uqDC3Qv9/ALrz4LgwFlQAAAAASUVORK5CYII="
+    }
+  ],
+  "variables": [
+    {
+      "name": "小樱好感度",
+      "initialValue": 0,
+      "description": "小樱对你的好感",
+      "type": "number"
+    },
+    {
+      "name": "小海好感度",
+      "initialValue": 0,
+      "description": "小海对你的好感",
+      "type": "number"
+    },
+    {
+      "name": "学习进度",
+      "initialValue": 0,
+      "description": "当前学习进度",
+      "type": "number"
+    },
+    {
+      "name": "金钱",
+      "initialValue": 100,
+      "description": "持有的金钱",
+      "type": "number"
+    },
+    {
+      "name": "勇气值",
+      "initialValue": 0,
+      "description": "做出选择的勇气",
+      "type": "number"
+    },
+    {
+      "name": "运气值",
+      "initialValue": 0,
+      "description": "随机运气",
+      "type": "number"
+    },
+    {
+      "name": "计时结果",
+      "initialValue": 0,
+      "description": "计时器结果存储",
+      "type": "number"
+    },
+    {
+      "name": "选择次数",
+      "initialValue": 0,
+      "description": "总共做出的选择次数",
+      "type": "number"
+    },
+    {
+      "name": "剧情进度",
+      "initialValue": 0,
+      "description": "当前剧情推进进度",
+      "type": "number"
+    }
+  ],
+  "characters": [
+    {
+      "name": "小樱",
+      "personality": "温柔善良",
+      "bio": "樱花树下的少女，喜欢帮助别人",
+      "sprite": ""
+    },
+    {
+      "name": "小海",
+      "personality": "活泼开朗",
+      "bio": "小樱的好朋友，运动达人",
+      "sprite": ""
+    },
+    {
+      "name": "林老师",
+      "personality": "严厉但关心学生",
+      "bio": "班主任，对学生要求严格",
+      "sprite": ""
+    },
+    {
+      "name": "神秘人",
+      "personality": "神秘莫测",
+      "bio": "身份不明的神秘角色",
+      "sprite": ""
+    },
+    {
+      "name": "旁白",
+      "personality": "叙述者",
+      "bio": "故事的讲述者",
+      "sprite": ""
+    }
+  ],
+  "globalFlags": {
+    "met_sakura": false,
+    "helped_kai": false,
+    "passed_exam": false,
+    "found_secret_room": false,
+    "confessed_to_sakura": false,
+    "true_ending_unlocked": false,
+    "bad_end_avoided": false,
+    "seen_good_ending": true,
+    "completed_once": true,
+    "seen_normal_ending": true,
+    "seen_true_ending": true
+  },
+  "flagAliases": {
+    "met_sakura": "遇见小樱",
+    "helped_kai": "帮助小海",
+    "passed_exam": "通过考试",
+    "found_secret_room": "发现密室",
+    "confessed_to_sakura": "向小樱表白",
+    "true_ending_unlocked": "真结局解锁",
+    "bad_end_avoided": "避开坏结局"
+  },
+  "groups": [
+    {
+      "id": "g_ch1",
+      "name": "第一章：初见",
+      "color": "#F0A060",
+      "titleCard": true,
+      "nodeIds": [
+        "n0_label",
+        "n1_dialog",
+        "n2_savePoint",
+        "n3_setVariable",
+        "n4_dialog",
+        "n5_dialog",
+        "n6_setVariable",
+        "n7_setVariable",
+        "n8_setVariable",
+        "n9_choice",
+        "n10_dialog",
+        "n11_setVariable",
+        "n12_setVariable",
+        "n13_setVariable",
+        "n14_dialog",
+        "n15_setVariable",
+        "n16_setVariable",
+        "n17_dialog",
+        "n18_setVariable",
+        "n19_setVariable"
+      ],
+      "background": "assets/backgrounds/ComfyUI_ANMIE_00031_.png",
+      "particlePreset": "sakura"
+    },
+    {
+      "id": "g_ch2",
+      "name": "第二章：校园生活",
+      "color": "#6BA4D8",
+      "titleCard": true,
+      "nodeIds": [
+        "n21_label",
+        "n22_dialog",
+        "n23_audio",
+        "n24_animation",
+        "n25_moveCharacter",
+        "n26_dialog",
+        "n27_timer",
+        "n28_dialog",
+        "n29_setVariable",
+        "n30_condition",
+        "n31_dialog",
+        "n32_setVariable",
+        "n33_setVariable",
+        "n34_dialog",
+        "n35_setVariable",
+        "n36_goto"
+      ],
+      "background": "assets/backgrounds/ComfyUI_00002_.png"
+    },
+    {
+      "id": "g_ch3",
+      "name": "第三章：操场邂逅",
+      "color": "#74B88A",
+      "titleCard": true,
+      "nodeIds": [
+        "n37_label",
+        "n38_wait",
+        "n39_audio",
+        "n40_dialog",
+        "n41_choice",
+        "n42_dialog",
+        "n43_setVariable",
+        "n44_setVariable",
+        "n45_setVariable",
+        "n46_random",
+        "n47_dialog",
+        "n48_setVariable",
+        "n49_dialog",
+        "n50_setVariable",
+        "n51_dialog",
+        "n52_achievement",
+        "n53_setVariable",
+        "n54_setVariable",
+        "n55_dialog",
+        "n56_setVariable",
+        "n57_setVariable"
+      ],
+      "background": "assets/backgrounds/ComfyUI_00035_.png"
+    },
+    {
+      "id": "g_ch4",
+      "name": "第四章：学园祭",
+      "color": "#E88080",
+      "titleCard": true,
+      "nodeIds": [
+        "n59_label",
+        "n60_cg",
+        "n61_dialog",
+        "n62_savePoint",
+        "n63_dialog",
+        "n64_choice",
+        "n65_dialog",
+        "n66_setVariable",
+        "n67_setVariable",
+        "n68_setVariable",
+        "n69_dialog",
+        "n70_setVariable",
+        "n71_setVariable",
+        "n72_dialog",
+        "n73_setVariable",
+        "n74_setVariable",
+        "n75_setVariable",
+        "n76_goto",
+        "n77_label",
+        "n78_audio",
+        "n79_cg",
+        "n80_timer"
+      ],
+      "background": "assets/backgrounds/festival.png"
+    },
+    {
+      "id": "g_ch5",
+      "name": "第五章：结局",
+      "color": "#A088D0",
+      "titleCard": true,
+      "nodeIds": [
+        "n81_label",
+        "n82_dialog",
+        "n83_condition",
+        "n84_dialog",
+        "n85_steamAchievement",
+        "n86_achievement",
+        "n87_end",
+        "n88_condition",
+        "n89_dialog",
+        "n90_end",
+        "n91_dialog",
+        "n92_animation",
+        "n93_wait",
+        "n94_end"
+      ],
+      "background": "assets/backgrounds/ComfyUI_00007_.png"
+    }
+  ],
+  "achievements": [
+    {
+      "id": "ach_first_meet",
+      "name": "初次邂逅",
+      "description": "第一次遇见小樱",
+      "icon": "🌸",
+      "autoCheck": true,
+      "unlockCondition": "小樱好感度 >= 5",
+      "unlocked": true,
+      "unlockedAt": "2026-05-02T16:40:49.186Z"
+    },
+    {
+      "id": "ach_hard_worker",
+      "name": "学霸诞生",
+      "description": "学习进度达到80以上",
+      "icon": "📚",
+      "autoCheck": true,
+      "unlockCondition": "学习进度 >= 80"
+    },
+    {
+      "id": "ach_rich",
+      "name": "小有积蓄",
+      "description": "金钱达到300以上",
+      "icon": "💰",
+      "autoCheck": true,
+      "unlockCondition": "金钱 >= 300",
+      "unlocked": true,
+      "unlockedAt": "2026-05-03T14:41:29.937Z"
+    },
+    {
+      "id": "ach_brave",
+      "name": "勇敢的心",
+      "description": "勇气值达到80以上",
+      "icon": "💪",
+      "autoCheck": true,
+      "unlockCondition": "勇气值 >= 80"
+    },
+    {
+      "id": "ach_lucky",
+      "name": "幸运之星",
+      "description": "运气值达到50以上",
+      "icon": "🍀",
+      "autoCheck": true,
+      "unlockCondition": "运气值 >= 50"
+    },
+    {
+      "id": "ach_choices",
+      "name": "选择达人",
+      "description": "做出5次以上选择",
+      "icon": "🎯",
+      "autoCheck": true,
+      "unlockCondition": "选择次数 >= 5"
+    },
+    {
+      "id": "ach_secret",
+      "name": "秘密发现者",
+      "description": "发现隐藏的秘密剧情",
+      "icon": "🔮",
+      "autoCheck": false
+    },
+    {
+      "id": "ach_true_love",
+      "name": "真爱永恒",
+      "description": "达成与小樱的真结局",
+      "icon": "💕",
+      "autoCheck": false,
+      "unlocked": true,
+      "unlockedAt": "2026-05-03T14:41:47.660Z"
+    }
+  ],
+  "items": [],
+  "glossary": []
+}

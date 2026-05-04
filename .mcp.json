@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "galgame": {
+      "command": "npx",
+      "args": ["tsx", "src/mcp/server.ts"]
+    }
+  }
+}
