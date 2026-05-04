@@ -10,3 +10,18 @@ playwright-report/
 .env.local
 .DS_Store
 Thumbs.db
+
+# Claude Code local settings (contains personal API keys)
+.claude/settings.local.json
+
+# Debug logs
+debug.log
+localhost-*.log
+
+# Test artifacts
+test-results/
+playwright-report/
+
+# IDE
+.vscode/
+.idea/
